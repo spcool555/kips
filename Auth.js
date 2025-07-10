@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         const result = await response.json();
-
+  console.log("📦 Response JSON:", result);
         if (response.ok) {
           localStorage.setItem("name", result.body.name);
           localStorage.setItem("email", result.body.uname);
@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
           localStorage.setItem("role", result.body.role);
 
           alert("Registration successful!");
+          
           window.location.href = "/";
         } else {
           alert("Registration failed!");
