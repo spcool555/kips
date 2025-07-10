@@ -1,0 +1,104 @@
+/* Container & Layout */
+.container.my-5 {
+  max-width: 960px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+/* Hero / Title */
+#packageTitle {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+/* Image styling */
+#packageImage {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+/* Basic info column */
+.col-md-6 > p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  color: #444;
+}
+.col-md-6 > p strong {
+  color: #2c3e50;
+}
+
+/* Description card */
+#packageDesc {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+.card.border.p-3 {
+  background: #fff;
+  border-radius: 0.5rem;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+}
+
+/* Inclusions/Exclusions cards */
+.card.p-3.mb-3 {
+  border-radius: 0.5rem;
+  background: #fafafa;
+  border: none;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
+}
+.card.p-3.mb-3 h5 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: #2c3e50;
+}
+.card.p-3.mb-3 ul {
+  list-style: disc inside;
+  padding-left: 0;
+  margin: 0;
+}
+.card.p-3.mb-3 li {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+/* Responsive tweaks */
+@media (max-width: 767px) {
+  #packageTitle {
+    font-size: 2rem;
+  }
+  .row.mb-5 {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .col-md-6 {
+    max-width: 100%;
+  }
+  .col-md-6:first-child {
+    margin-bottom: 2rem;
+  }
+}
+
+
+.btn {
+
+  padding: 0.75rem 1.75rem;
+  margin-bottom: 1%;
+
+}
+
+
+
+
+
+

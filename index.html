@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Kips Tourism </title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+
+        <script src="nationaldata.js"></script>
+        <script src="data.js"></script>
+        <style>
+
+.imgs{
+    height: 35vh;
+    width: 15vh;
+}
+
+            .packages-img img {
+    height: 300px; /* Set a fixed height for all images */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+        </style>
+
+<style>
+    .stage {
+      width: 100%;
+      height: 60vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 1000px;
+    }
+  
+    .carousel {
+      position: relative;
+      width: 900px;
+      height: 200px;
+      transform-style: preserve-3d;
+      transition: transform 1s;
+    }
+  
+    .carousel__face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+      transform: rotateY(0deg) translateZ(100px);
+    }
+    .carousel__face img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+    .carousel__face:nth-child(1) {
+      transform: rotateY(0deg) translateZ(100px);
+    }
+  
+    .carousel__face:nth-child(2) {
+      transform: rotateY(60deg) translateZ(100px);
+    }
+  
+    .carousel__face:nth-child(3) {
+      transform: rotateY(120deg) translateZ(100px);
+    }
+  
+    .carousel__face:nth-child(4) {
+      transform: rotateY(180deg) translateZ(100px);
+    }
+  
+    .carousel__face:nth-child(5) {
+      transform: rotateY(240deg) translateZ(100px);
+    }
+  
+    .carousel__face:nth-child(6) {
+      transform: rotateY(300deg) translateZ(100px);
+    }
+  </style>
+<style>
+  .destination-img {
+    position: relative;
+    height: 300px; /* Set fixed height */
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .destination-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* Ensures image covers area without stretching */
+  }
+
+  .destination-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  /* semi-transparent black */
+    color: white;
+    padding: 1rem;
+  }
+</style>
+
+
+<style>
+   .slide img {
+  width: 200px;
+  height: 150px;
+  animation: scroll 10s linear infinite;
+}
+
+.slide-track {
+  width: 100%;
+  display: flex;
+  gap: 6em;
+  overflow: hidden;
+}
+
+.slider {
+  /* margin-top: 10px; */
+  background-color: whitesmoke;
+  padding: 4em 1em;
+}
+
+@keyframes scroll {
+  0% {transform: translateX(0);}
+  100% {transform: translatex(-1000%)}
+}
+</style>
+
+<style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f7f7;
+      color: #333;
+    }
+
+    .gallery-section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .gallery-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .gallery-header h5 {
+      color: #007BFF;
+      font-size: 18px;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .gallery-header h1 {
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 200px;
+      border-radius: 10px;
+      object-fit: cover;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.85);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s ease;
+      z-index: 1000;
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    }
+
+    .lightbox::after {
+      content: '✖';
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      font-size: 32px;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      .gallery-header h1 {
+        font-size: 28px;
+      }
+    }
+
+      .back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+  }
+</style>
+
+    </head>
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+       
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Kips Tourism</h1>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="/" class="nav-item nav-link active">Home</a>
+                      <a href=".././about.html" class="nav-item nav-link">About Us</a>
+                    <a href="history.html" class="nav-item nav-link">Booking History</a>
+                    
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Destinations</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="Domestic.html" class="dropdown-item">Domestic Tours</a>
+                                <a href="international.html" class="dropdown-item">International Tours</a>
+                               
+                            </div>
+                        </div>
+                      
+                        
+                        <!-- <a href="services.html" class="nav-item nav-link">Services</a> -->
+                        <!-- <a href="packages.html" class="nav-item nav-link">Packages</a> -->
+                        <!-- <a href="blog.html" class="nav-item nav-link">Blog</a> -->
+                        <div  class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Jungle Safari</a>
+                              <div class="dropdown-menu m-0">
+                                <a href="../singleCard/Kanha.html" class="dropdown-item">Kanha National Park</a>
+                                <a href="../singleCard/Pench.html" class="dropdown-item">Pench National Park</a>
+                                <a href="../singleCard/Tadoba.html" class="dropdown-item">Tadoba National Park</a>
+                                <a href="../singleCard/Gir.html" class="dropdown-item">Gir National Park</a>
+                                <a href="../singleCard/Ranthambore.html" class="dropdown-item">Ranthambore National Park</a>
+                                <a href="../singlePage/Jhalana.html?id=1" class="dropdown-item">Bandipur National Park</a>
+                              
+                            </div>
+                        </div>
+                  
+                          <a href=".././contact.html" class="nav-item nav-link">Contact Details</a>
+                  <div id="auth-section">
+  <a href="./Auth.html" class="nav-item nav-link" id="auth-link">Signup/Login</a>
+  
+</div>
+<a
+  style="background-color: red; cursor: pointer; color: white; display: none;"
+  class="nav-item nav-link"
+  id="logout-btn"
+>
+  Logout
+</a>                            
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Carousel Start -->
+           <div>
+            <div class="container-fluid">
+                <div class="position-relative overflow-hidden" >
+                  <video class="w-100 h-100 object-fit-cover" autoplay loop muted>
+                    <source src="img/VN20250704_151235.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+              
+</div>
+            <!-- Carousel End -->
+        </div>
+       
+         <!-- About Start -->
+         <div class="container-fluid about py-5">
+            <div class="container py-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-5">
+                        <div class="h-100" style="border: 50px solid; border-color:white transparent white transparent;">
+                            <img src="img/Untitled-1-[Recovered].png" class="img-fluid w-100 h-100" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url('https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png');">
+                        <h5 class="section-about-title pe-3">About Us</h5>
+                        <h1 class="mb-4">Welcome to <span class="text-primary">Kips Tourism</span></h1>
+                        <p class="mb-4">
+                            Kips Tourism is a bespoke holiday planning company and a proud part of the Decofurn Construction Group. We're dedicated to helping you explore and discover destinations across the globe with ease and personalization.
+                        </p>
+                        <p class="mb-4">
+                            We specialize in crafting customized travel itineraries tailored to your unique tastes—because we know every traveler has a different perspective and travel style.
+
+Our mission is to take you beyond the typical tourist trails—blending offbeat destinations with cultural, religious, and iconic landmarks—so you can truly immerse yourself in every journey and create unforgettable memories.
+                        <div class="row gy-2 gx-4 mb-4">
+                            <div class="col-sm-6">
+                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Tailor-Made Tour Packages</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Luxury & Budget Accommodation Options</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Knowledgeable Travel Guides</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Family & Group Travel Solutions</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Specialized International Getaways</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>24/7 Customer Support</p>
+                            </div>
+                        </div>
+                        <a class="btn btn-primary rounded-pill py-3 px-5 mt-2" href="./contact.html">Contact Details</a>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+
+       <!-- Destination Domestic Start -->
+       <div class="container-fluid destination py-5">
+        <div class="container py-5">
+            <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+                <h5 class="section-title px-3">Destination</h5>
+                <h1 class="mb-0">Domestic Tours</h1>
+            </div>
+            <div class="tab-class text-center">
+              
+                <div class="tab-content">
+                    <div id="tab-1" class="tab-pane fade show p-0 active">
+                        <div class="row g-4">
+                            <div class="col-xl-8">
+                                <div class="row g-4">
+                                    <div class="col-lg-6">
+                                        <div class="destination-img">
+                                            <img class="img-fluid rounded w-100" src="./img/Kerala/kerala.jpg" alt="">
+                                            <div class="destination-overlay p-4">
+                                                <a href="./singleCard/Kerala.html" class="btn btn-primary text-white rounded-pill border py-2 px-3">Kerala Tour</a><br>
+                                                <!-- <h4 class="text-white mb-2 mt-3">4 Nights and 5 Days</h4> -->
+                                                <a href="./singleCard/Kerala.html" class="btn-hover text-white">View All Details <i class="fa fa-arrow-right ms-2"></i></a>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="destination-img">
+                                            <img class="img-fluid rounded w-100" src="./img/Himachal/himachal.jpg" alt="">
+                                            <div class="destination-overlay p-4">
+                                                <a href="./singleCard/Himachal.html" class="btn btn-primary text-white rounded-pill border py-2 px-3">Himachal Tour</a> <br>
+                                                <!-- <h4 class="text-white mb-2 mt-3">5 Nights and 6 Days</h4> -->
+                                                <a href="./singleCard/Himachal.html" class="btn-hover text-white">View All Details <i class="fa fa-arrow-right ms-2"></i></a>
+                                            </div>
+                                          
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="destination-img">
+                                            <img class="img-fluid rounded w-100" src="https://media.istockphoto.com/id/1323846766/photo/a-beautiful-view-of-dal-lake-in-winter-srinagar-kashmir-india.jpg?s=612x612&w=0&k=20&c=Dp3peie2t-jdLEmqe4W-DD09GACu2Cr-JjHHeB6rpBc=" alt="">
+                                            <div class="destination-overlay p-4">
+                                                <a href="./singleCard/Kashmir.html" class="btn btn-primary text-white rounded-pill border py-2 px-3">Kashmir Tour</a> <br>
+                                                <!-- <h4 class="text-white mb-2 mt-3">5 Nights and 6 Days</h4> -->
+                                                <a href="./singleCard/Kashmir.html" class="btn-hover text-white">View All Details <i class="fa fa-arrow-right ms-2"></i></a>
+                                            </div>
+                                          
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="destination-img">
+                                            <img class="img-fluid rounded w-100" src="./img/North East/NorthEast.jpg" alt="">
+                                            <div class="destination-overlay p-4">
+                                                <a href="./singleCard/Notheastindia.html" class="btn btn-primary text-white rounded-pill border py-2 px-3">North East India</a> <br>
+                                                <!-- <h4 class="text-white mb-2 mt-3">5 Nights and 6 Days</h4> -->
+                                                <a href="./singleCard/Notheastindia.html" class="btn-hover text-white">View All Details <i class="fa fa-arrow-right ms-2"></i></a>
+                                            </div>
+                                          
+                                        </div>
+                                    </div>
+                                   
+                                   
+                                  
+                                </div>
+                            </div>
+                    
+                            <div class="col-lg-4">
+                                <div class="destination-img">
+                                    <img class="img-fluid rounded w-100" src="./img/Goa/goa.jpg" alt="">
+                                    <div class="destination-overlay p-4">
+                                        <a href="./singleCard/goa.html" class="btn btn-primary text-white rounded-pill border py-2 px-3">Goa Tour</a> <br>
+                                        <!-- <h4 class="text-white mb-2 mt-3">Los angelas</h4> -->
+                                        <a href="./singleCard/goa.html" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
+                                    </div>
+                                    <div class="search-icon">
+                                        <!-- <a href="./" data-lightbox="destination-6"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a> -->
+                                    </div>
+                                </div>
+                                <div class="destination-img" style="margin-top: 8%;">
+                                    <img class="img-fluid rounded w-100" src="./img/Karnataka/karnataka.jpg" alt="">
+                                    <div class="destination-overlay p-4">
+                                        <a href="./singleCard/Karnataka.html" class="btn btn-primary text-white rounded-pill border py-2 ">Karnataka</a> <br>
+                                        <!-- <h4 class="text-white mb-2 mt-3">Los angelas</h4> -->
+                                        <a href="./singleCard/Karnataka.html" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
+                                    </div>
+                                    <div class="search-icon">
+                                        <!-- <a href="./" data-lightbox="destination-6"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                 
+              
+                  
+               
+                </div>
+            </div>
+        </div>
+      <center> <a href="/Domestic.html" class="btn btn-primary">Show More</a> </center>  
+    </div>
+    <!-- Destination Domestic End -->
+
+        <!-- Destination International Start -->
+        <div class="container-fluid destination py-5">
+            <div class="container py-5">
+                <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+                    <h5 class="section-title px-3">Destination</h5>
+                    <h1 class="mb-0">International Tours</h1>
+                </div>
+                <div class="tab-class text-center">
+                    <!-- <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
+                        <li class="nav-item">
+                            <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill " data-bs-toggle="pill" href="#tab-8">
+                                <span class="text-dark" style="width: 150px;">Thailand</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="d-flex py-2 mx-3 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab-2">
+                                <span class="text-dark" style="width: 150px;">Dubai</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab-6">
+                                <span class="text-dark" style="width: 150px;">Singapore</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill active" data-bs-toggle="pill" href="#tab-1">
+                                <span class="text-dark" style="width: 150px;">Bali</span>
+                            </a>
+                        </li>
+                       
+                      
+                    </ul> -->
+                    <div class="tab-content">
+                        <div id="tab-1" class="tab-pane fade show p-0 active">
+                            <div class="row g-4">
+                                <div class="col-xl-8">
+                                    <div class="row g-4">
+                                        <div class="col-lg-6">
+                                            <div class="destination-img">
+                                                <img class="img-fluid rounded w-100 imgs" src="./img/Bali/bali.jpg" alt="">
+                                                <div class="destination-overlay p-4">
+                                                    <a href="./singleCard/Bali.html" class="btn btn-primary text-white rounded-pill border py-2 px-3">Bali Tour</a> <br>
+                                                    <!-- <h4 class="text-white mb-2 mt-3">4 Nights and 5 Days</h4> -->
+                                                    <a href="./singleCard/Bali.html" class="btn-hover text-white">View All Details <i class="fa fa-arrow-right ms-2"></i></a>
+                                                </div>
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="destination-img">
+                                                <img class="img-fluid rounded w-100  imgs" src="./img/Thailand/thailand.jpg" alt="">
+                                                <div class="destination-overlay p-4">
+                                                    <a href="./singleCard/Thailand.html" class="btn btn-primary text-white rounded-pill border py-2 px-3">Thailand Tour</a><br>
+                                                    <!-- <h4 class="text-white mb-2 mt-3">5 Nights and 6 Days</h4> -->
+                                                    <a href="./singleCard/Thailand.html" class="btn-hover text-white">View All Details <i class="fa fa-arrow-right ms-2"></i></a>
+                                                </div>
+                                              
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="destination-img">
+                                                <img class="img-fluid rounded w-100 imgs" src="./img/Singapore/singapore-city-skyline-P238A3R.jpg" alt="">
+                                                <div class="destination-overlay p-4">
+                                                    <a href="./singleCard/Singapore.html" class="btn btn-primary text-white rounded-pill border py-2 px-3">Singapore Tour</a><br>
+                                                    <!-- <h4 class="text-white mb-2 mt-3">5 Nights and 6 Days</h4> -->
+                                                    <a href="./singleCard/Singapore.html" class="btn-hover text-white">View All Details <i class="fa fa-arrow-right ms-2"></i></a>
+                                                </div>
+                                              
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="destination-img">
+                                                <img class="img-fluid rounded w-100 imgs" src="./img/SriLanka/srilanka.jpg" alt="">
+                                                <div class="destination-overlay p-4">
+                                                    <a href="./singleCard/Srilanka.html" class="btn btn-primary text-white rounded-pill border py-2 px-3">Sri Lanka Tour</a><br>
+                                                    <!-- <h4 class="text-white mb-2 mt-3">5 Nights and 6 Days</h4> -->
+                                                    <a href="./singleCard/Srilanka.html" class="btn-hover text-white">View All Details <i class="fa fa-arrow-right ms-2"></i></a>
+                                                </div>
+                                              
+                                            </div>
+                                        </div>
+                                       
+                                      
+                                    </div>
+                                </div>
+                        
+                                <div class="col-lg-4">
+                                    <div class="destination-img">
+                                        <img class="img-fluid rounded w-100 imgs" src="./img/Dubai/2Nuoflcf2C.jpg" alt="">
+                                        <div class="destination-overlay p-4">
+                                            <a href="./singleCard/dubai.html" class="btn btn-primary text-white rounded-pill border py-2 px-3">Dubai Tour</a> <br>
+                                            <!-- <h4 class="text-white mb-2 mt-3">Los angelas</h4> -->
+                                            <a href="./singleCard/dubai.html" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
+                                        </div>
+                                        <div class="search-icon">
+                                            <!-- <a href="img/destination-6.jpg" data-lightbox="destination-6"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a> -->
+                                        </div>
+                                    </div>
+                                    <div class="destination-img" style="margin-top: 7%;">
+                                        <img class="img-fluid rounded w-100 imgs" src="./img/Maldives/FGSqt9c1Vu.jpg" alt="">
+                                        <div class="destination-overlay p-4">
+                                            <a href="./singleCard/Maldives.html" class="btn btn-primary text-white rounded-pill border py-2 px-3">Maldives Tour</a> <br>
+                                            <!-- <h4 class="text-white mb-2 mt-3">Los angelas</h4> -->
+                                            <a href="./singleCard/Maldives.html" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
+                                        </div>
+                                        <div class="search-icon">
+                                            <!-- <a href="img/destination-6.jpg" data-lightbox="destination-6"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                  
+                
+                
+                   
+                 
+                    </div>
+                </div>
+            </div>
+            <center> <a href="/international.html" class="btn btn-primary">Show More</a> </center>  
+        </div>
+        <!-- Destination International End -->
+
+        <!-- Explore Tour Start -->
+    
+        <!-- Explore Tour Start -->
+
+        <!-- Packages Start -->
+        <div  class="container-fluid packages py-5" hidden>
+            <div class="container py-5">
+                <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+                    <h5 class="section-title px-3">Packages</h5>
+                    <h1 class="mb-0">Jungle Safaris in India</h1>
+                </div>
+                <div class="packages-carousel owl-carousel">
+                    <!-- Kanha National Park -->
+                    <div class="packages-item">
+                        <div class="packages-img">
+                            <img src="https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2023/12/29/6f8ab18d2952df3bc2aa26a695ceee44_1000x1000.jpg" class="img-fluid w-100 rounded-top" alt="Image">
+                          
+                            <!-- <div class="packages-price py-2 px-4">$349.00</div> -->
+                        </div>
+                        <div class="packages-content bg-light " >
+                            <div class="p-4 pb-0" style="height:200px;">
+                                <h5 class="mb-0">Kanha National Park</h5>
+                                <small class="text-uppercase">Jungle Safari</small>
+                               
+                                <p class="mb-4">Experience the thrill of the jungle at Kanha National Park, home to majestic tigers, leopards, and a diverse array of wildlife.</p>
+                            </div>
+                            <div class="row bg-primary rounded-bottom mx-0">
+                                <div class="col-6 text-start px-0">
+                                    <a href="./singleCard/Kanha.html" class="btn-hover btn text-white py-2 px-4">Read More</a>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Pench National Park -->
+                    <div class="packages-item">
+                        <div class="packages-img">
+                            <img src="https://www.culturalsafaritours.com/wp-content/uploads/2020/08/penchsafari.jpg" class="img-fluid w-100 rounded-top" alt="Image">
+                          
+                            <!-- <div class="packages-price py-2 px-4">$399.00</div> -->
+                        </div>
+                        <div class="packages-content bg-light">
+                            <div class="p-4 pb-0" style="height: 200px;" >
+                                <h5 class="mb-0">Pench National Park</h5>
+                                <small class="text-uppercase">Jungle Safari</small>
+                               
+                                <p class="mb-4">Embark on a jungle safari in Pench National Park, a beautiful blend of forest and grassland, home to tigers and diverse species.</p>
+                            </div>
+                            <div class="row bg-primary rounded-bottom mx-0">
+                                <div class="col-6 text-start px-0">
+                                    <a href="./singleCard/Pench.html" class="btn-hover btn text-white py-2 px-4">Read More</a>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Gir National Park -->
+                    <div class="packages-item">
+                        <div class="packages-img">
+                            <img src="https://itinsy.com/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbThYIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3974cce8a65f94ce74753203baea11cab515663f/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9TY21WemFYcGxYM1J2WDJacGRGc0hhUUxvQTJrQzZBTTZDbk5oZG1WeWV3bzZDbk4wY21sd1ZEb1VjMkZ0Y0d4cGJtY3RabUZqZEc5eVNTSUtORG95T2pBR09nWkZWRG9NY1hWaGJHbDBlV2xhT2c1cGJuUmxjbXhoWTJWSklnbEtVRVZIQmpzSlZEb1BZMjlzYjNKemNHRmpaVWtpQ1hOU1IwSUdPd2xVIiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--f4efa12fecc158e41d6cbec11257765d30837439/82879847_675876456280488_4323259504004169728_n.jpg" class="img-fluid w-100 rounded-top" alt="Image">
+                          
+                            <!-- <div class="packages-price py-2 px-4">$499.00</div> -->
+                        </div>
+                        <div class="packages-content bg-light">
+                            <div class="p-4 pb-0" style="height: 200px;">
+                                <h5 class="mb-0">Gir National Park</h5>
+                                <small class="text-uppercase">Jungle Safari</small>
+                               
+                                <p class="mb-4">Spot the famous Asiatic lions and enjoy a unique safari experience at Gir National Park, located in Gujarat.</p>
+                            </div>
+                            <div class="row bg-primary rounded-bottom mx-0">
+                                <div class="col-6 text-start px-0">
+                                    <a href="./singleCard/Gir.html" class="btn-hover btn text-white py-2 px-4">Read More</a>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Tadoba National Park -->
+                    <div class="packages-item">
+                        <div class="packages-img">
+                            <img src="https://nagpurtourism.co.in/images/places-to-visit/header/tadoba-national-park-nagpur-tourism-entry-fee-timings-holidays-reviews-header.jpg" class="img-fluid w-100 rounded-top" alt="Image">
+                           
+                        </div>
+                        <div class="packages-content bg-light">
+                            <div class="p-4 pb-0" style="height: 200px;">
+                                <h5 class="mb-0">Tadoba National Park</h5>
+                                <small class="text-uppercase">Jungle Safari</small>
+                               
+                                <p class="mb-4">Discover the beauty of Tadoba National Park with thrilling safaris and a chance to witness tigers and other wildlife in their natural habitat.</p>
+                            </div>
+                            <div class="row bg-primary rounded-bottom mx-0">
+                                <div class="col-6 text-start px-0">
+                                    <a href="./singleCard/Tadoba.html" class="btn-hover btn text-white py-2 px-4">Read More</a>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <center  hidden> <a href="./singleCard/JungleSafari.html" class="btn btn-primary">Show More</a> </center> 
+        <!-- Packages End -->
+
+<br> <br>
+<!-- our clients start -->
+<div class hidden="mx-auto text-center " style="max-width: 900px;">
+ <h5 class="section-title px-3">Our Valued Partners</h5>
+
+</div>
+<dic class hidden="ourclients">
+    <div class="slider">
+        <div class="slide-track">
+          <div class="slide">
+            <img src="./img/client/amrut biochem.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="./img/client/IVAS.jpg" alt="">
+          </div>
+          <div class="slide">
+            <img src="./img/client/Jivanjor.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="./img/client/Mangalkar-Jwellers.jpg" alt="">
+          </div>
+          <div class="slide">
+            <img src="./img/client//Manish Group.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="./img/client/Ozone-hardware.webp" alt="">
+          </div>
+          <div class="slide">
+            <img src="./img/client/Ply Lam Decor amaravati.avif" alt="">
+          </div>
+          <div class="slide">
+            <img src="./img/client/amrut biochem.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="./img/client/IVAS.jpg" alt="">
+          </div>
+          <div class="slide">
+            <img src="./img/client/Jivanjor.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="./img/client/Mangalkar-Jwellers.jpg" alt="">
+          </div>
+        </div>
+      </div>
+</dic>
+
+
+
+
+
+
+
+
+        <!-- Gallery Start -->
+        <div class="gallery-section">
+            <div class="gallery-header">
+              <h5>Our Gallery</h5>
+              <h1>Tourism & Traveling Gallery.</h1>
+            </div>
+        
+            <div class="gallery-grid">
+              <img src="./img/client/20160103_152905.jpg" alt="Image 1">
+              <img src="./img/client/20160108_001921.jpg" alt="Image 2">
+              <img src="./img/client/20160526_131026.jpg" alt="Image 3">
+              <img src="./img/client/20161216_105902.jpg" alt="Image 4">
+              <img src="./img/client/20170515_102622.jpg" alt="Image 5">
+              <img src="./img/client/IMG_3478.JPG" alt="Image 6">
+              <!-- <img src="./img/client/c1.jpg" alt="Image 7"> -->
+              <!-- <img src="./img/client/c2.jpg" alt="Image 8"> -->
+              <!-- <img src="./img/client/c3.jpg" alt="Image 9"> -->
+              <img src="./img/client/c4.jpg" alt="Image 10">
+              <!-- <img src="./img/client/c5.jpg" alt="Image 11"> -->
+              <!-- <img src="./img/client/c6.jpg" alt="Image 11"> -->
+            </div>
+          </div>
+        
+          <div class="lightbox" id="lightbox">
+            <img src="" alt="Enlarged View">
+          </div>
+        
+          <script>
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = lightbox.querySelector('img');
+        
+            document.querySelectorAll('.gallery-grid img').forEach(img => {
+              img.addEventListener('click', () => {
+                lightbox.classList.add('active');
+                lightboxImg.src = img.src;
+              });
+            });
+        
+            lightbox.addEventListener('click', () => {
+              lightbox.classList.remove('active');
+            });
+          </script>
+        
+<center> <a href="./gallery.html" class="btn btn-primary">Show More</a> </center>
+        <!-- Gallery End -->
+
+   
+
+ 
+      
+
+        <!-- Testimonial Start -->
+        <div class="container-fluid testimonial py-5">
+            <div class="container py-5">
+                <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+                    <h5 class="section-title px-3">Testimonial</h5>
+                    <h1 class="mb-0">What Our Clients Say!</h1>
+                </div>
+        <div class="testimonial-carousel owl-carousel" id="testimonial-container">
+    <!-- Testimonials will be injected here dynamically -->
+</div>
+
+            </div>
+             <center>
+<div>
+  <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#reviewModal">
+    Add Review
+  </button>
+</div>
+        </center>
+        </div>
+
+
+<div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="reviewForm">
+        <div class="modal-header">
+          <h5 class="modal-title" id="reviewModalLabel">Add a Review</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" required />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" required />
+          </div>
+          <div class="mb-3">
+            <label for="city" class="form-label">City</label>
+            <input type="text" class="form-control" id="city" required />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Rating</label>
+            <select class="form-select" id="rating" required>
+              <option value="" disabled selected>Select rating</option>
+              <option value="1">★☆☆☆☆</option>
+              <option value="2">★★☆☆☆</option>
+              <option value="3">★★★☆☆</option>
+              <option value="4">★★★★☆</option>
+              <option value="5">★★★★★</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="3" required></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success">Submit Review</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+       
+ 
+    <!-- Loader -->
+<div id="loader" class="text-center mt-3" style="display: none;">
+  <div class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+    
+        <!-- Testimonial End -->
+
+        <!-- Subscribe Start -->
+        <div class="container-fluid subscribe py-5">
+            <div class="container text-center py-5">
+                <div class="mx-auto text-center" style="max-width: 900px;">
+                    <h5 class="subscribe-title px-3">Subscribe</h5>
+                    <h1 class="text-white mb-4">Our Newsletter</h1>
+                 
+                    <div class="position-relative mx-auto">
+                        <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Subscribe End -->
+
+        <!-- Footer Start -->
+   <div class="container-fluid footer py-4">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class=" text-white">Get In Touch</h4>
+                    <a href="">CORPORATE OFFICE :-
+<br/>
+3, Gunjar Apartment, Laxmi Nagar, WHC Road, Nagpur,Pin:-440022. <BR>Maharashtra,India.
+<br/>
+BRANCH OFFICE :-
+<br/>
+M2-13,B.N Complex Al Muteena, Dubai, UAE. </a>
+           
+
+                  
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class=" text-white">Company</h4>
+                    <a href="about.html"><i class="fas fa-angle-right me-2"></i> About</a>  
+                    <a href="./contact.html"><i class="fas fa-angle-right me-2"></i> Contact Us</a>    
+                     <a href="http://localhost:5502/admin.html"><i class="fas fa-angle-right me-2"></i> Admin</a> 
+                   
+                    
+             
+
+                  
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class=" text-white">Contact Details</h4>
+                      <a href="https://mail.google.com/mail">kipstourismllc@gmail.com</a>
+                    <a href="">+971551896200/(+91)8484072402</a>
+                   <br>
+                  <div class="d-flex align-items-center">
+                        <i class="fas fa-share fa-2x text-white me-2"></i>
+                        <a class="btn-square btn btn-primary rounded-circle mx-1" href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                
+                        <a class="btn-square btn btn-primary rounded-circle mx-1" href="https://www.instagram.com/kipstourismllc/" target="_blank"><i class="fab fa-instagram"></i></a>
+      
+                    </div>
+                  
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+            <img style="width: 100%;" src="./img/logokips.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+        <!-- Footer End -->
+        
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright text-body py-4">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6 text-center text-md-end mb-md-0">
+                        <i class="fas fa-copyright me-2"></i><a class="text-white" href="#">Kips Tourism</a>, All right reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-start">
+                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                        Developed By <a class="text-white" href="">Decofurn multisoultions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+                   <!-- Back to Top -->
+        <!-- <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>    -->
+     <a href="https://wa.me/971551896200" target="_blank" class="btn-md-square back-to-top">
+  <img style="width: 4em;" src="https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-whatsapp-phone-icon-png-image_6315989.png" alt="WhatsApp Chat">
+</a>
+   
+            
+            <!-- <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>    -->
+
+<script>
+const packageContainer = document.getElementById('package-container');
+
+packages.slice(0, 3).forEach(pkg => {
+  const packageItem = `
+    <div class="col-md-6 col-lg-4">
+      <div class="national-item">
+      <img src="${pkg.image}" class="img-fluid w-100 rounded"  style="height: 250px; object-fit: cover;" alt="${pkg.destination}">
+        <div class="national-content">
+          <div class="national-info">
+            <h5 class="text-white text-uppercase mb-2">${pkg.destination} - ${pkg.duration}</h5>
+            <p class="text-white">${pkg.description}</p>
+            <a href="${pkg.path}" class="btn-hover text-white">View All Details <i class="fa fa-arrow-right ms-2"></i></a>
+          </div>
+        </div>
+        <div class="national-plus-icon">
+          <a href="${pkg.path}" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
+        </div>
+      </div>
+    </div>
+  `;
+
+  packageContainer.innerHTML += packageItem;
+});
+
+
+
+const packageContainer2 = document.getElementById('international-packages');
+
+  int_packages.slice(0,3).forEach(pkg => {
+    const packageCard = `
+      <div class="international-item col-md-4">
+        <img src="${pkg.image}" class="img-fluid w-100 rounded" style="height: 250px; object-fit: cover;" alt="${pkg.destination}">
+        <div class="international-content">
+          <div class="international-info">
+            <h5 class="text-white text-uppercase mb-2">${pkg.destination}</h5>
+            <a href="${pkg.path}" class="btn-hover text-white me-4">
+              <i class="fas fa-map-marker-alt me-1"></i> ${pkg.duration}
+            </a>
+            <a href="${pkg.path}" class="btn-hover text-white">
+            
+            </a>
+          </div>
+        </div>
+       
+        <div class="international-plus-icon">
+          <a href="${pkg.path}" class="my-auto">
+            <i class="fas fa-link fa-2x text-white"></i>
+          </a>
+        </div>
+      </div>
+    `;
+    packageContainer2.innerHTML += packageCard;
+  });
+
+</script>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    fetch('/public/getAllreviews')
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('testimonial-container');
+            container.innerHTML = ''; // Clear any existing content
+
+            data.forEach(review => {
+                const testimonialItem = document.createElement('div');
+                testimonialItem.className = "testimonial-item text-center rounded pb-4";
+
+                testimonialItem.innerHTML = `
+                    <div class="testimonial-comment bg-light rounded p-4">
+                        <p class="text-center mb-5">${review.message}</p>
+                    </div>
+                    <div class="testimonial-img p-1">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" class="img-fluid rounded-circle" alt="${review.name}">
+                    </div>
+                    <div style="margin-top: -35px;">
+                        <h5 class="mb-0">${review.name}</h5>
+                        <p class="mb-0">${review.city}</p>
+                        <div class="d-flex justify-content-center">
+                            ${generateStars(review.stars)}
+                        </div>
+                    </div>
+                `;
+                container.appendChild(testimonialItem);
+            });
+
+            // Reinitialize Owl Carousel (if required after DOM update)
+            $('.testimonial-carousel').owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                smartSpeed: 1000,
+                dots: true
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching testimonials:', error);
+        });
+});
+
+// Utility to create star icons
+function generateStars(count) {
+    let starsHtml = '';
+    for (let i = 0; i < count; i++) {
+        starsHtml += '<i class="fas fa-star text-primary"></i>';
+    }
+    return starsHtml;
+}
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    fetch('http://localhost:8007/public/getAllreviews')  // Fixed URL
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('testimonial-container');
+            container.innerHTML = ''; // Clear existing content
+
+            data.forEach(review => {
+                const testimonialItem = document.createElement('div');
+                testimonialItem.className = "testimonial-item text-center rounded pb-4";
+
+                testimonialItem.innerHTML = `
+                    <div class="testimonial-comment bg-light rounded p-4">
+                        <p class="text-center mb-5">${review.message}</p>
+                    </div>
+                    <div class="testimonial-img p-1">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png"
+                             class="img-fluid rounded-circle" alt="${review.name}">
+                    </div>
+                    <div style="margin-top: -35px;">
+                        <h5 class="mb-0">${review.name}</h5>
+                        <p class="mb-0">${review.city}</p>
+                        <div class="d-flex justify-content-center">
+                            ${generateStars(review.stars)}
+                        </div>
+                    </div>
+                `;
+                container.appendChild(testimonialItem);
+            });
+
+            // Reinitialize Owl Carousel (after content update)
+            $('.testimonial-carousel').trigger('destroy.owl.carousel');
+            $('.testimonial-carousel').owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                smartSpeed: 1000,
+                dots: true
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching testimonials:', error);
+        });
+});
+
+function generateStars(count) {
+    let starsHtml = '';
+    for (let i = 0; i < count; i++) {
+        starsHtml += '<i class="fas fa-star text-primary"></i>';
+    }
+    return starsHtml;
+}
+</script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const authSection = document.getElementById("auth-section");
+    const logoutBtn = document.getElementById("logout-btn");
+    const name = localStorage.getItem("name");
+    const token = localStorage.getItem("token");
+
+    if (token && name) {
+      // Show greeting
+      authSection.innerHTML = `<span class="nav-item nav-link">Hello, ${name}</span>`;
+      // Show logout button
+      logoutBtn.style.display = "inline-block";
+
+      logoutBtn.addEventListener("click", () => {
+        localStorage.removeItem("name");
+        localStorage.removeItem("email");
+        localStorage.removeItem("token");
+        window.location.reload(); // or redirect if needed
+      });
+    } else {
+      // Show signup/login
+      authSection.innerHTML = `
+    <div id="auth-section">
+  <a href="./Auth.html" class="nav-item nav-link" id="auth-link">Signup/Login</a>
+  
+</div>
+<a
+  style="background-color: red; cursor: pointer; color: white; display: none;"
+  class="nav-item nav-link"
+  id="logout-btn"
+>
+  Logout
+</a>  
+      `;
+      logoutBtn.style.display = "none";
+    }
+  });
+</script>
+
+
+
+<script>
+  document.getElementById('reviewForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    // Show loader
+    document.getElementById('loader').style.display = 'block';
+
+    const data = {
+      name: document.getElementById('name').value.trim(),
+      email: document.getElementById('email').value.trim(),
+      city: document.getElementById('city').value.trim(),
+      stars: parseInt(document.getElementById('rating').value),
+      message: document.getElementById('message').value.trim()
+    };
+
+    try {
+      const response = await fetch('http://localhost:8007/public/saveReviewsData', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      // Hide loader after response
+      document.getElementById('loader').style.display = 'none';
+
+      if (response.ok) {
+        alert('Review submitted successfully!');
+        document.getElementById('reviewForm').reset();
+
+        const modalEl = document.getElementById('reviewModal');
+        const modal = bootstrap.Modal.getInstance(modalEl);
+        modal.hide();
+      } else {
+        alert('Failed to submit review.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred while submitting the review.');
+      document.getElementById('loader').style.display = 'none'; // hide loader on error
+    }
+  });
+</script>
+
+
+
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+
+</html>

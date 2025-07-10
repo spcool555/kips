@@ -1,0 +1,83 @@
+/* Background for the section */
+.container-fluid.about {
+  background-color: #f8f9fa;
+}
+
+/* Inner container spacing */
+.container-fluid.about .container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* Card grid gap (Bootstrap 5 still uses gutters) */
+.row#gpackagesRow {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 2rem;
+}
+
+/* Card styling */
+#packagesRow .card {
+  border: none;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Lift & shadow on hover */
+#packagesRow .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+/* Image cover */
+#packagesRow .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Card body */
+#packagesRow .card-body {
+  padding: 1.25rem;
+  background: #fff;
+}
+
+/* Title and text */
+#packagesRow .card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #2c3e50;
+}
+#packagesRow .card-body p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 0.75rem;
+}
+
+/* View Details button */
+#packagesRow .btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  border-radius: 2rem;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+#packagesRow .btn-primary:hover {
+  background-color: #084fc1;
+}
+
+/* Responsive tweak: center cards on small screens */
+@media (max-width: 767px) {
+  #packagesRow .col-md-6,
+  #packagesRow .col-lg-4 {
+    display: flex;
+    justify-content: center;
+  }
+  #packagesRow .card {
+    width: 100%;
+    max-width: 320px;
+  }
+}

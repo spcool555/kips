@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Kips Tourism</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f4f4f9, #e0f7fa);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            margin: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        /* Fade-in animation for body */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Container styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hero Section */
+  
+
+        .hero h1 {
+            color: steelblue;
+            font-size: 48px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Package Sections */
+        .package {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .package img {
+            width:180vh;
+            height: 70vh;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+
+        /* Fade-in up animation for package */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hover effect for package */
+        .package:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Package titles */
+        h4 {
+            color: #4CAF50;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        /* Includes/Excludes Section */
+        .includes, .excludes {
+            background-color: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        /* Excludes section with a different color */
+        .excludes {
+            background-color: #ffebee;
+        }
+
+        h3 {
+            color: #388E3C;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        /* List styles */
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+        .intro {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.intro h2 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.intro p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.intro p strong {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.intro p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .intro {
+        padding: 15px;
+    }
+
+    .intro h2 {
+        font-size: 20px;
+    }
+
+    .intro p {
+        font-size: 14px;
+    }
+}
+
+    </style>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet"> 
+
+ <!-- Icon Font Stylesheet -->
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+ <!-- Libraries Stylesheet -->
+ <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+ <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+
+ <!-- Customized Bootstrap Stylesheet -->
+ <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+ <!-- Template Stylesheet -->
+ <link href="../css/style.css" rel="stylesheet">
+
+ <style>
+    .package img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-right: 20px;
+    }
+.nav-item{
+    color: black !important;
+}
+    @media (max-width: 768px) {
+        .package img {
+            height: 200px;
+        }
+    }
+
+ @media (max-width: 480px) {
+        .package img {
+            height: 150px;
+        }
+        .hero h1{
+            font-size: 20px;
+        }
+    }
+    
+</style>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark" style=" margin: 0; padding: 0;">
+    <a href="/" class="navbar-brand p-0">
+        <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Kips Tourism</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse" > 
+        <div class="navbar-nav ms-auto py-0">
+            <a href="/" class="nav-item nav-link active" >Home</a>
+            <a href="../about.html" class="nav-item nav-link">About Us</a>  
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-item nav-link dropdown-toggle" data-bs-toggle="dropdown">Destinations</a>
+                <div class="dropdown-menu m-0">
+                    <a href=".././Domastic.html" class="dropdown-item">Domastic Tours</a>
+                    <a href=".././international.html" class="dropdown-item">International Tours</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link nav-item dropdown-toggle" data-bs-toggle="dropdown">Jungle Safari</a>
+                <div class="dropdown-menu m-0">
+                    <a href="../singleCard/Kanha.html" class="dropdown-item">Kanha National Park</a>
+                    <a href="../singleCard/Pench.html" class="dropdown-item">Pench National Park</a>
+                    <a href="../singleCard/Tadoba.html" class="dropdown-item">Tadoba National Park</a>
+                    <a href="../singleCard/Gir.html" class="dropdown-item">Gir National Park</a>
+                    <a href="../singleCard/Ranthambore.html" class="dropdown-item">Ranthambore National Park</a>
+                    <a href="../singlePage/Jhalana.html?id1" class="dropdown-item">Bandipur National Park</a>
+                </div>
+            </div>
+            <a href="../contact.html" class="nav-item nav-link">Contact Details</a>
+        </div>
+    </div>
+</nav>
+    <!-- <button style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;" onclick="history.back()">Back</button> -->
+
+    <div class="container" style="margin-top: 50px;" class="img-fluid">
+        
+       
+        <div class="package" id="1">
+            <div class="hero">
+                <center>
+                    <h1>Ranthambore Safari</h1>
+                </center>     
+            </div>
+            <img src="https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2023/12/29/6f8ab18d2952df3bc2aa26a695ceee44_1000x1000.jpg" alt="Kanha National Park">
+            <div>
+                <center class="my-5">
+                    <h4>2 Nights and 3 Days</h4>
+                </center>
+                
+                <!-- <h5>Destination: Jabalpur - Kanha National Park - Jabalpur</h5> -->
+                
+                <h5>Day 1: Arrival in Ranthambore National Park :</h5>
+               <p>
+                Our tour services starts once you reach in Ranthambore National Park. After arrival complete check in formalities at the pre booked resort. Take your refreshments and just relax. The first day of your tour is dedicated on your wish. Post lunch you may head towards local sightseeing places in nearby villages. It is an opportunity to explore and know the living habits of local tribes. Spend evening in leisure at resort. Enjoy recreational activities available in the resort premises. Take your dinner and overnight stay.
+
+               </p>           
+                <h5>Day 2: Canter Safari in Ranthambore National Park :</h5>
+              <p>
+                The second day of your tour is dedicated for exploring the exotic flora and fauna of the Ranthambore National Park. Get up early in the morning and get ready for morning cater safari in Ranthambore Tiger Reserve. Reach canter safari boarding point at the gate. The canter takes you to the deep inside the jungle and gives you chance to spot the tigers in natural habitat. Apart from tigers there are many wildlife species live in the forest of Ranthambore which is really treat for you during the safari ride. After spending 3-4 hours amidst jungle come back to resort and take your breakfast and relax. Rest of the day is dedicated to you only. Do whatever you wish to do. Overnight stay in the resort.
+
+              </p>                
+                <h5>Day 3: Chambal Boat Safari & Departure :</h5>
+                <p>
+                    Start your day with hot cup of tea and coffee. Complete your breakfast at the resort. Complete check out formalities and head towards the nearby Chambal River for an exciting boat safari. Chambal safari is best spot to see variety of aquatic animals and avifauna species. After you enjoyed the boat safari you may now head towards onwards journey with unforgettable memory of Ranthambore National Park.
+
+                </p>   
+                <p><b>Tour and Services End.</b></p>
+            </div>
+        </div>
+        <div class="package" id="2">
+            <div class="hero">
+                <center>
+                    <h1>Kanha Tour Ex Nagpur</h1>
+                </center>     
+            </div>
+            <img src="https://www.tripsavvy.com/thmb/gzwtsHm3I7cKuYB_mnV6LRMLnk4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/_DSC0297_Snapseed_Fotor-590448a25f9b5810dcf78a5a.jpg" alt="Kanha National Park">
+            <div>
+                <center class="my-5">
+                    <h4>1 Nights and 2 Days</h4>
+                </center>
+                
+                <!-- <h5>Destination: Nagpur - Kanha National Park - Nagpur</h5> -->
+                
+                <h5>Day 1: Arrive at Ranthambore National Park & May Prefer Local Sightseeing</h5>
+              <p>
+                Once you arrive at the Ranthambore National Park you will be assisted by one of our tour executive. Complete check in formalities at the hotel and freshen up yourself. Take your refreshments and lunch at the resort restaurant and just relax. Post lunch you may head outside for local sightseeing places nearby the park only. You may spend 3-4 hours easily exploring the local area and knowing kind of flora and fauna of the park. In evening come back to resort, take your dinner and overnight stay.
+
+              </p>      
+                <h5>Day 2: Canter Safari in Ranthambore National Park & Departure :</h5>
+              <p>
+                The second day of your tour is dedicated to exploring the exotic flora and fauna of the park. You may start your day with hot cup of tea or coffee and be prepared for the early morning canter safari in the park. Leave the resort before the sun rises and spend quality time around 3-4 hours in the jungles of Ranthambore and try finding the royal big cats. After the safari is over came back to your resort and take your breakfast. Post breakfast complete check out formalities and head towards your next journey, the tour ends.
+
+              </p>                
+                 
+                <p><b>Tour and Services End.</b></p>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script>
+        // Function to get URL parameters
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+    
+        document.addEventListener("DOMContentLoaded", function () {
+            const packageId = getQueryParam("id"); // Get 'id' from URL
+            const packages = document.querySelectorAll(".package");
+    
+            packages.forEach(pkg => {
+                if (pkg.id === packageId) {
+                    pkg.style.display = "block"; // Show the matching div
+                } else {
+                    pkg.style.display = "none"; // Hide others
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>

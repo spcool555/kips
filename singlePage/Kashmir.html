@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Kips Tourism</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f4f4f9, #e0f7fa);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            margin: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        /* Fade-in animation for body */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Container styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hero Section */
+
+
+        .hero h1 {
+            color: steelblue;
+            font-size: 48px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Package Sections */
+        .package {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .package img {
+            width: 180vh;
+            height: 70vh;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+
+        /* Fade-in up animation for package */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hover effect for package */
+        .package:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Package titles */
+        h4 {
+            color: #4CAF50;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        /* Includes/Excludes Section */
+        .includes,
+        .excludes {
+            background-color: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        /* Excludes section with a different color */
+        .excludes {
+            background-color: #ffebee;
+        }
+
+        h3 {
+            color: #388E3C;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        /* List styles */
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .intro {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        .intro h2 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 2s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+
+        .intro p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .intro p strong {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        .intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .intro {
+                padding: 15px;
+            }
+
+            .intro h2 {
+                font-size: 20px;
+            }
+
+            .intro p {
+                font-size: 14px;
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+
+
+    <style>
+    .package img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-right: 20px;
+    }
+.nav-item{
+    color: black !important;
+}
+    @media (max-width: 768px) {
+        .package img {
+            height: 200px;
+        }
+    }
+
+ @media (max-width: 480px) {
+        .package img {
+            height: 150px;
+        }
+        .hero h1{
+            font-size: 20px;
+        }
+    }
+    
+</style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark" style=" margin: 0; padding: 0;">
+    <a href="/" class="navbar-brand p-0">
+        <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Kips Tourism</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse" > 
+        <div class="navbar-nav ms-auto py-0">
+            <a href="/" class="nav-item nav-link active" >Home</a>
+            <a href="../about.html" class="nav-item nav-link">About Us</a>  
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-item nav-link dropdown-toggle" data-bs-toggle="dropdown">Destinations</a>
+                <div class="dropdown-menu m-0">
+                    <a href=".././Domastic.html" class="dropdown-item">Domastic Tours</a>
+                    <a href=".././international.html" class="dropdown-item">International Tours</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link nav-item dropdown-toggle" data-bs-toggle="dropdown">Jungle Safari</a>
+                <div class="dropdown-menu m-0">
+                    <a href="../singleCard/Kanha.html" class="dropdown-item">Kanha National Park</a>
+                    <a href="../singleCard/Pench.html" class="dropdown-item">Pench National Park</a>
+                    <a href="../singleCard/Tadoba.html" class="dropdown-item">Tadoba National Park</a>
+                    <a href="../singleCard/Gir.html" class="dropdown-item">Gir National Park</a>
+                    <a href="../singleCard/Ranthambore.html" class="dropdown-item">Ranthambore National Park</a>
+                    <a href="../singlePage/Jhalana.html?id1" class="dropdown-item">Bandipur National Park</a>
+                </div>
+            </div>
+            <a href="../contact.html" class="nav-item nav-link">Contact Details</a>
+        </div>
+    </div>
+</nav>
+    <!-- <button style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;" onclick="history.back()">Back</button> -->
+
+    <div class="container" style="margin-top: 50px;" class="img-fluid">
+
+
+        <div class="package" id="1">
+            <div class="hero">
+                <center>
+                    <h1>Kashmir </h1>
+                </center>
+            </div>
+            <img src="https://www.stayvista.com/blog/wp-content/uploads/2024/09/Way_to_the_Tulian_lake_from_Pahalgam-2.jpg" alt="Dwarka Package">
+            <div>
+                <center class="my-5">
+                    <h4>5 Nights 6 Days Package</h4>
+                </center>
+
+        
+                <p><strong>Day 1:</strong> Arrival Srinagar – Upon your arrival at the airport, meet our representative awaiting just outside the arrival hall, past the customs area and currency shops. In the afternoon, check into your pre-booked hotel. Enjoy dinner and an overnight stay at the hotel.</p>
+                    
+                <p><strong>Day 2:</strong> Srinagar - Gulmarg – Srinagar – After breakfast, leave for Gulmarg (Meadow of Flowers). Situated 2730 meters above sea level, this gorgeous hamlet is especially beautiful in winter when covered in snow. Gulmarg boasts one of the best ski slopes in the world and the highest golf course with 18 holes. Under favorable weather conditions, arrangements for skiing and golf can be made on demand. If the weather permits, enjoy views of Nanga Parbat, the naked mountain over 26,000 ft that dominates the region. Other leisure activities such as a cable car (Gondola) ride up to Khilangmarg can also be arranged. Return to Srinagar for dinner and an overnight stay.</p>
+                
+                <p><strong>Day 3:</strong> Srinagar - Sonmarg – Srinagar – Enjoy a full-day excursion to Sonmarg, known for its stunning drive from Srinagar. Stop at beautiful spots along the way. Continue to Sonmarg (2690 meters), where you can ride a horse to visit Thajiwas Glacier, which has snow year-round. Sonmarg is also known as the Gateway to Ladakh. In the evening, return to the houseboat for an overnight stay.</p>
+                
+                <p><strong>Day 4:</strong> Srinagar - Pahalgam – After breakfast, drive to Pahalgam (The Valley of Shepherds). En-route, visit the saffron fields of Pampore, renowned for producing the world's best saffron. Take a halt at Awantipura Ruins (1100 years old temple of Lord Vishnu built by King Awantivarman) and enjoy the beautiful countryside. Drive through pine forests to reach Pahalgam, where you can enjoy stunning views of the Lidder Valley. Take an evening walk along pony trails. Overnight stay at Pahalgam hotel.</p>
+                
+                <p><strong>Day 5:</strong> Pahalgam - Srinagar (Houseboat Stay) – After breakfast, embark on a sightseeing tour of the Mughal Gardens. Srinagar, with its placid lakes, enchanting surroundings, houseboats, and beautiful gardens, is truly heavenly. You will be directed to a deluxe houseboat for an overnight stay. Enjoy a traditional Shikara ride on Dal Lake, exploring Mughal Gardens like Shalimar, Nishat Bagh, and Chashme Shahi. In the evening, check into the houseboat for an overnight stay.</p>
+                
+                <p><strong>Day 6:</strong> Srinagar - Delhi Departure – Our representative will escort you to Srinagar Airport and make all arrangements for your convenient journey. Bid goodbye to the land of eternal beauty, heavenly charm, and the place most ideally called "the heaven on earth."</p>
+  
+
+
+            </div>
+        </div>
+
+        <div class="package" id="2">
+            <div class="hero">
+                <center>
+                    <h1>Kashmir With Mata Vaishnodevi </h1>
+                </center>
+            </div>
+            <img src="../img/Kashmir/kashmir.jpg" alt="Dwarka Package">
+            <div>
+                <center class="my-5">
+                    <h4> 7 Nights & 8 Days - Kashmir with Mata Vaishnodevi Package</h4>
+                </center>
+
+               
+                
+                <p><strong>Day 1:</strong> Katra (Vaishnov Devi) – Arrive at Katra Railway Station. Upon arrival, you will be picked up and transferred to your pre-booked hotel. Check in to the hotel and enjoy an overnight stay with dinner.</p>
+                    
+                    <p><strong>Day 2:</strong> Katra – Vaishnov Devi Darshan – After breakfast, proceed for Vaishnov Devi darshan. In the evening, return to the hotel for dinner and an overnight stay.</p>
+                    
+                    <p><strong>Day 3:</strong> Katra - Srinagar – After breakfast, check out from the hotel and proceed to Srinagar. In the afternoon, check into your pre-booked hotel. Enjoy dinner and an overnight stay at the hotel.</p>
+                    
+                    <p><strong>Day 4:</strong> Srinagar - Gulmarg – Srinagar – After breakfast, leave for Gulmarg (Meadow of Flowers). Situated 2730 meters above sea level, this gorgeous hamlet is especially beautiful in winter when covered in snow. Gulmarg boasts one of the best ski slopes in the world and the highest golf course with 18 holes. Under favorable weather conditions, arrangements for skiing and golf can be made on demand. If the weather permits, enjoy views of Nanga Parbat, the naked mountain over 26,000 ft that dominates the region. Other leisure activities such as a cable car (Gondola) ride up to Khilangmarg can also be arranged. Return to Srinagar for dinner and an overnight stay.</p>
+                    
+                    <p><strong>Day 5:</strong> Srinagar - Sonmarg – Srinagar – Enjoy a full-day excursion to Sonmarg, known for its stunning drive from Srinagar. Stop at beautiful spots along the way. Continue to Sonmarg (2690 meters), where you can ride a horse to visit Thajiwas Glacier, which has snow year-round. Sonmarg is also known as the Gateway to Ladakh. In the evening, return to the hotel for an overnight stay.</p>
+                    
+                    <p><strong>Day 6:</strong> Srinagar Local Sightseeing – After breakfast, embark on a sightseeing tour of the Mughal Gardens. Srinagar, with its placid lakes, enchanting surroundings, houseboats, and beautiful gardens, is truly heavenly. You will be directed to a deluxe houseboat for an overnight stay. Enjoy a traditional Shikara ride on Dal Lake, exploring Mughal Gardens like Shalimar, Nishat Bagh, and Chashme Shahi. In the evening, check into the houseboat for an overnight stay.</p>
+                    
+                    <p><strong>Day 7:</strong> Srinagar – Pahalgam – After breakfast, drive to Pahalgam (The Valley of Shepherds). En-route, visit the saffron fields of Pampore, renowned for producing the world's best saffron. Take a halt at Awantipura Ruins (1100 years old temple of Lord Vishnu built by King Awantivarman) and enjoy the beautiful countryside. Drive through pine forests to reach Pahalgam, where you can enjoy stunning views of the Lidder Valley. Take an evening walk along pony trails. Overnight stay at Pahalgam hotel.</p>
+                    
+                    <p><strong>Day 8:</strong> Pahalgam - Katra Drop – After breakfast, check out from the hotel and transfer to Katra. You will be dropped off at the railway station/airport in a timely manner. Your tour ends with happy memories.</p>
+        
+            </div>
+        </div>
+
+
+        <div class="includes">
+            <h3>Package Inclusion:</h3>
+            <ul>
+                <li>3 Star Hotels on Double sharing Basis.</li>
+                <li>2 Nights in Katra </li>
+                <li>3 nights in Srinagar.</li>
+                <li>1 night in Pahalgam.</li>
+                <li>1 night in Srinagar Houseboat.</li>
+               
+                <li>Daily Breakfast.</li>
+                <li>Sightseeing as per the itinerary by Private Vehicle.</li>
+                <li>Srinagar Pick and Drop .</li>
+                <li>All applicable taxes.</li>
+                
+            </ul>
+        </div>
+
+        <div class="excludes">
+            <h3>Package Excludes:</h3>
+            <ul>
+                <li>Any Airfare / Train fare.</li>
+                <li>Fur coats/Jackets to visit snow points or any special attire required for specific sightseeing places.</li>
+                <li>Entrance Fees / Horse Riding / Gondola Ride in Gulmarg.</li>
+                <li>Sightseeing of Chandanwari, Aru, and Betab Valley in Pahalgam.</li>
+                <li>Any other items not included in the Package Cost Includes.</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        // Function to get URL parameters
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const packageId = getQueryParam("id"); // Get 'id' from URL
+            const packages = document.querySelectorAll(".package");
+
+            packages.forEach(pkg => {
+                if (pkg.id === packageId) {
+                    pkg.style.display = "block"; // Show the matching div
+                } else {
+                    pkg.style.display = "none"; // Hide others
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

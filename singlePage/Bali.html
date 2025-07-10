@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Kips Tourism</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f4f4f9, #e0f7fa);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            margin: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        /* Fade-in animation for body */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Container styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hero Section */
+  
+
+        .hero h1 {
+            color: steelblue;
+            font-size: 48px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Package Sections */
+        .package {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .package img {
+            width:180vh;
+            height: 70vh;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+
+        /* Fade-in up animation for package */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hover effect for package */
+        .package:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Package titles */
+        h4 {
+            color: #4CAF50;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        /* Includes/Excludes Section */
+        .includes, .excludes {
+            background-color: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        /* Excludes section with a different color */
+        .excludes {
+            background-color: #ffebee;
+        }
+
+        h3 {
+            color: #388E3C;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        /* List styles */
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+        .intro {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.intro h2 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.intro p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.intro p strong {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.intro p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .intro {
+        padding: 15px;
+    }
+
+    .intro h2 {
+        font-size: 20px;
+    }
+
+    .intro p {
+        font-size: 14px;
+    }
+}
+
+    </style>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet"> 
+
+ <!-- Icon Font Stylesheet -->
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+ <!-- Libraries Stylesheet -->
+ <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+ <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+
+ <!-- Customized Bootstrap Stylesheet -->
+ <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+ <!-- Template Stylesheet -->
+ <link href="../css/style.css" rel="stylesheet">
+
+ <style>
+    .package img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-right: 20px;
+    }
+.nav-item{
+    color: black !important;
+}
+    @media (max-width: 768px) {
+        .package img {
+            height: 200px;
+        }
+    }
+
+ @media (max-width: 480px) {
+        .package img {
+            height: 150px;
+        }
+        .hero h1{
+            font-size: 20px;
+        }
+    }
+    
+</style>
+<!-- Bootstrap JavaScript (CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark" style=" margin: 0; padding: 0;">
+    <a href="/" class="navbar-brand p-0">
+        <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Kips Tourism</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse" > 
+        <div class="navbar-nav ms-auto py-0">
+            <a href="/" class="nav-item nav-link active" >Home</a>
+            <a href="../about.html" class="nav-item nav-link">About Us</a>  
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-item nav-link dropdown-toggle" data-bs-toggle="dropdown">Destinations</a>
+                <div class="dropdown-menu m-0">
+                    <a href=".././Domastic.html" class="dropdown-item">Domastic Tours</a>
+                    <a href=".././international.html" class="dropdown-item">International Tours</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link nav-item dropdown-toggle" data-bs-toggle="dropdown">Jungle Safari</a>
+                <div class="dropdown-menu m-0">
+                    <a href="../singleCard/Kanha.html" class="dropdown-item">Kanha National Park</a>
+                    <a href="../singleCard/Pench.html" class="dropdown-item">Pench National Park</a>
+                    <a href="../singleCard/Tadoba.html" class="dropdown-item">Tadoba National Park</a>
+                    <a href="../singleCard/Gir.html" class="dropdown-item">Gir National Park</a>
+                    <a href="../singleCard/Ranthambore.html" class="dropdown-item">Ranthambore National Park</a>
+                    <a href="../singlePage/Jhalana.html?id1" class="dropdown-item">Bandipur National Park</a>
+                </div>
+            </div>
+            <a href="../contact.html" class="nav-item nav-link">Contact Details</a>
+        </div>
+    </div>
+</nav>
+    
+    <!-- <button style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;" onclick="history.back()">Back</button> -->
+
+    <div class="container" style="margin-top: 50px;" class="img-fluid">
+        <div class="hero">
+      <center>
+        <h1 >Bali Tours</h1>
+      </center>     
+        </div>
+       
+        <div class="package" id="1">
+            <img src="../img/Bali/W6vIAzplpk.jpg" alt="Dwarka Package" class="img-fluid">
+            <div>
+                <center class="my-5">
+           <h4>4 Nights and 5 Days</h4>
+           </center>
+           <h5>Day 1: Airport Pick Up + Free and Easy</h5>
+           <p>First day in program Bali Tour Packages 4 Nights and 5 Days Tours will start pick up at Airport. Our English Speaking Driver will Pick Up at Airport holding sign with your name, so will be easy for you to find us in airport, just looking sign with your name and our English Speaking Driver will be welcome you with friendly smile and we directly to your hotel for check in.</p>
+           <p><b>Note:</b> Pick Up at Airport is based on your flight Timings</p>
+           
+           <h5>Day 2: Full day Barong and Kintamani Tour</h5>
+           <p>After a buffet breakfast at the hotel, proceed towards Batubulan for a performance of the stunning Barong and Kris Dance. Later travel to the Bedulu Elephant Cave, in part a monastery dating back to the 9th Century, Gunung Kwai, an ancient tomb carved out of a huge rock face. From Tampaksiring the road climbs up to the Kintamani district, with its magnificent views of volcanic Mount and Lake Batur. After Enjoying Kintamani Volcanic Hill sightseeing return back to Hotel and Overnight at Hotel in Bali.</p>
+           
+           <h5>Day 3: Water Sports Activities and Evening Bali Hai Sunset Dinner Cruise</h5>
+           <p>After Breakfast at the hotel, Proceed for the watersports activities at Tanjung Benoa beach. Enjoy The Exciting Bali Water Sports such as: Snorkeling, Parasailing, Jet Ski, Donut Boat, Water Ski, Flying Fish, Banana Boat, Wakeboarding, Ocean Walker, Diving. Glass Bottom Boat, and Turtle Islands Tour are included in Water sport.</p>
+           <p><b>Bali Sunset Dinner Cruise:</b> Amazing Bali Cruise to enjoy sunset in cruise ship. As the sun goes down we set off on a relaxing cruise around the harbour. Take in the cool night air on the top deck, be entertained by our live musical entertainers at the bridge deck, savour a delicious international buffet dinner, then dance the night away at our disco or enjoy our live cabaret show. Bali Sunset Dinner Cruise is suitable for the whole family so bring the kids along to enjoy the party.</p>
+           
+           <h5>Day 4: Ubud Temple, Uluwatu and Tanah Lot Temple Visit</h5>
+           <p>After breakfast proceed for Sightseeing. Visit Ubud Tegenungan Waterfall, one of the best waterfalls in Ubud village, offering an amazing scenery with clean water and cool atmosphere. Then visit Ubud Monkey Forest, a small rain forest dwelt by some group of monkeys and other tropical animals. After that, visit Tanah Lot Temple, a Balinese Hindu temple on the rock located in the middle of the sea. The word "Tanah Lot" consists of two words: "Tanah" interpreted as a reef looking like an isle, and "Lot" meaning sea. Evening return to Hotel and overnight stay.</p>
+           
+           <h5>Day 5: Free and Easy + Airport Transfer</h5>
+           <p>Our English Speaking Driver will pick up you at hotel for the last day of The Bali Tour Packages 4 Nights and 5 Days Tours. We will pick up at hotel based on your flight details and the direction from the places you stay and then we directly to the airport for departure. Please check your stuff and belongings before we go to airport.</p>
+           <p><b>Note:</b> International Departure requires 3 hours before check-in time at the airport.</p>
+
+        </div>
+            <div class="includes">
+                <h3>Package Inclusion:</h3>
+                <ul>
+                    <li>Stay at Bali on Double Sharing basis</li>
+                    <li>05 Buffet Breakfast</li>
+                    <li>All Sightseeing on PVT Basis</li>
+                    <li>120 Mins Spa Treatment at Bali Orchids Spa with transfers</li>
+                    <li>One round of Banana Boat OR Parasailing</li>
+                    <li>English Speaking Driver Cum Guide</li>
+                    <li>Entrance fee to all sites based on itinerary</li>
+                    <li>Airport Pick up & Drop</li>
+                </ul>
+            </div>
+            
+            <div class="excludes">
+                <h3>Package Excludes:</h3>
+                <ul>
+                    <li>Visa on arrival</li>
+                    <li>Expenses of personal nature, mini bar in the room, laundry, telephone bills, tips, gratuities, etc.</li>
+                    <li>Tips & Porterage for Local driver & guide</li>
+                    <li>Cost of any other services not specifically mentioned in inclusions</li>
+                    <li>Any increase in the cost that may occur before departure, including fluctuations in exchange rates</li>
+                </ul>
+            </div>
+        </div>
+        <div class="package" id="2">
+            <img src="../img/Bali/bali.jpg" alt="Dwarka Package">
+            <div>
+                <center class="my-5">
+           <h4>5 Nights and 6 Days</h4>
+           </center>
+           <h5>Day 1: Airport Pick Up + Free and Easy</h5>
+           <p>First day in program Bali Tour Packages 5 Nights and 6 Days Tours will start with pick up at the Airport. Our English Speaking Driver will pick you up at the Airport holding a sign with your name, making it easy for you to find us. Our driver will welcome you with a friendly smile and take you directly to your hotel for check-in.</p>
+           <p><strong>Note:</strong> Pick up at the Airport is based on your flight timings.</p>
+       
+           <h5>Day 2: Full day Barong and Kintamani Tour</h5>
+           <p>After a buffet breakfast at the hotel, proceed towards Batubulan for a performance of the stunning Barong and Kris Dance. Later, travel to the Bedulu Elephant Cave, in part a monastery dating back to the 9th Century, and Gunung Kwai, an ancient tomb carved out of a huge rock face. From Tampaksiring, the road climbs up to the Kintamani district, offering magnificent views of volcanic Mount and Lake Batur. After enjoying Kintamani Volcanic Hill sightseeing, return to the hotel and stay overnight.</p>
+       
+           <h5>Day 3: Water Sports Activities - Uluwatu Sunset Tour</h5>
+           <p>After breakfast at the hotel, proceed for water sports activities at Tanjung Benoa Beach. Enjoy exciting Bali water sports such as Snorkeling, Parasailing, Jet Ski, Donut Boat, Water Ski, Flying Fish, Banana Boat, Wakeboarding, Ocean Walker, Diving, Glass Bottom Boat, and Turtle Islands Tour at your own cost.</p>
+           <p>Later, proceed for the Uluwatu Temple Sunset Tour. In the evening, return to the hotel and stay overnight.</p>
+       
+           <h5>Day 4: Ubud Temple - Tanah Lot Temple Visit</h5>
+           <p>After breakfast, proceed for sightseeing. Visit Ubud Tegenungan Waterfall, one of the best waterfalls in Ubud village, offering amazing scenery with clean water and a cool atmosphere. Then, visit the Ubud Monkey Forest, a small rainforest inhabited by groups of monkeys and other tropical animals. After that, visit Tanah Lot Temple, a Balinese Hindu temple on a rock located in the middle of the sea. The name 'Tanah Lot' consists of two words: 'Tanah' (interpreted as a reef resembling an isle) and 'Lot' (meaning sea). In the evening, return to the hotel and stay overnight.</p>
+       
+           <h5>Day 5: 2 Hrs Spa & Day at Leisure</h5>
+           <p>After breakfast, proceed for a 2-hour Aromatherapy SPA treatment at BALI ORCHID SPA. The Package Inclusion a foot bath, body massage, gentle moisturizing rub, flower bath, and spa ginger drink. Later, return to the hotel and enjoy the rest of the day at your leisure.</p>
+       
+           <h5>Day 6: Free and Easy + Airport Transfer</h5>
+           <p>Our English Speaking Driver will pick you up from the hotel on the last day of the Bali Tour Packages 5 Nights and 6 Days Tour. We will arrange the pickup based on your flight details and the location of your stay, then transfer you directly to the airport for departure. Please check your belongings before heading to the airport.</p>
+           <p><strong>Note:</strong> International departures require check-in at least 3 hours before the flight.</p>
+           </div>
+            <div class="includes">
+                <h3>Package Inclusion:</h3>
+                <ul>
+                    <li>Stay at Bali on Double Sharing basis</li>
+                    <li>05 Buffet Breakfast</li>
+                    <li>All Sightseeing on PVT Basis</li>
+                    <li>120 Mins Spa Treatment at Bali Orchids Spa with transfers</li>
+                    <li>One round of Banana Boat OR Parasailing</li>
+                    <li>English Speaking Driver Cum Guide</li>
+                    <li>Entrance fee to all sites based on itinerary</li>
+                    <li>Airport Pick up & Drop</li>
+                </ul>
+            </div>
+            
+            <div class="excludes">
+                <h3>Package Excludes:</h3>
+                <ul>
+                    <li>Visa on arrival</li>
+                    <li>Expenses of personal nature, mini bar in the room, laundry, telephone bills, tips, gratuities, etc.</li>
+                    <li>Tips & Porterage for Local driver & guide</li>
+                    <li>Cost of any other services not specifically mentioned in inclusions</li>
+                    <li>Any increase in the cost that may occur before departure, including fluctuations in exchange rates</li>
+                </ul>
+            </div>
+        </div>
+   
+
+   
+    </div>
+    <script>
+        // Function to get URL parameters
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+    
+        document.addEventListener("DOMContentLoaded", function () {
+            const packageId = getQueryParam("id"); // Get 'id' from URL
+            const packages = document.querySelectorAll(".package");
+    
+            packages.forEach(pkg => {
+                if (pkg.id === packageId) {
+                    pkg.style.display = "block"; // Show the matching div
+                } else {
+                    pkg.style.display = "none"; // Hide others
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>

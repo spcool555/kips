@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Kips Tourism</title>
+    <link rel="stylesheet" href="singlepage.css">
+    <style>
+        #packageDesc {
+            white-space: pre-wrap;
+            /* preserve newlines */
+            overflow-wrap: break-word;
+            /* wrap long words */
+        }
+
+        #packageImage {
+            width: 100%;
+            /* fill its column width */
+            max-width: 500px;
+            /* but never exceed 500px wide */
+            height: 300px;
+            /* always 300px tall */
+            object-fit: cover;
+            /* crop & maintain aspect ratio */
+            border-radius: 0.5rem;
+            /* your rounded corners */
+            box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+            /* center if narrower than column */
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f4f4f9, #e0f7fa);
+            color: #333;
+            line-height: 1.6;
+            padding: 10px;
+            margin: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        /* Fade-in animation for body */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Container styles */
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hero Section */
+
+
+        .hero h1 {
+            color: steelblue;
+            font-size: 48px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Package Sections */
+        .package {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .package img {
+            width: 180vh;
+            height: 70vh;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+
+        /* Fade-in up animation for package */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hover effect for package */
+        .package:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Package titles */
+        h4 {
+            color: #4CAF50;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        /* Includes/Excludes Section */
+        .includes,
+        .excludes {
+            background-color: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        /* Excludes section with a different color */
+        .excludes {
+            background-color: #ffebee;
+        }
+
+        h3 {
+            color: #388E3C;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        /* List styles */
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .intro {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        .intro h2 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 2s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+
+        .intro p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .intro p strong {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        .intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .intro {
+                padding: 15px;
+            }
+
+            .intro h2 {
+                font-size: 20px;
+            }
+
+            .intro p {
+                font-size: 14px;
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+
+
+    <style>
+        .package img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+
+        .nav-item {
+            color: black !important;
+        }
+
+        @media (max-width: 768px) {
+            .package img {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .package img {
+                height: 150px;
+            }
+
+            .hero h1 {
+                font-size: 20px;
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style=" margin: 0; padding: 0;">
+        <a href="/" class="navbar-brand p-0">
+            <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Kips Tourism</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="/" class="nav-item nav-link active">Home</a>
+                <a href="../about.html" class="nav-item nav-link">About Us</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-item nav-link dropdown-toggle" data-bs-toggle="dropdown">Destinations</a>
+                    <div class="dropdown-menu m-0">
+                        <a href=".././Domastic.html" class="dropdown-item">Domastic Tours</a>
+                        <a href=".././international.html" class="dropdown-item">International Tours</a>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link nav-item dropdown-toggle" data-bs-toggle="dropdown">Jungle Safari</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="../singleCard/Kanha.html" class="dropdown-item">Kanha National Park</a>
+                        <a href="../singleCard/Pench.html" class="dropdown-item">Pench National Park</a>
+                        <a href="../singleCard/Tadoba.html" class="dropdown-item">Tadoba National Park</a>
+                        <a href="../singleCard/Gir.html" class="dropdown-item">Gir National Park</a>
+                        <a href="../singleCard/Ranthambore.html" class="dropdown-item">Ranthambore National Park</a>
+                        <a href="../singlePage/Jhalana.html?id1" class="dropdown-item">Bandipur National Park</a>
+                    </div>
+                </div>
+                <a href="../contact.html" class="nav-item nav-link">Contact Details</a>
+                <div id="auth-section">
+                    <a href="./Auth.html" class="nav-item nav-link" id="auth-link">Signup/Login</a>
+
+                </div>
+                <a style="background-color: red; cursor: pointer; color: white; display: none;"
+                    class="nav-item nav-link" id="logout-btn">
+                    Logout
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- <button style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;" onclick="history.back()">Back</button> -->
+
+    <div class="container my-5">
+        <!-- Hero / Title -->
+        <div class="text-center mb-4">
+            <h1 id="packageTitle">Loading…</h1>
+        </div>
+
+        <!-- Image + Basic Info -->
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <img id="packageImage" src="" alt="Package Image" class="img-fluid rounded shadow-sm" />
+            </div>
+            <div class="col-md-6">
+
+                <p><strong>Duration:</strong> <span id="packageDuration"></span></p>
+                <p><strong>Location:</strong> <span id="packageLocation"></span></p>
+                <p><strong>Price (INR):</strong> ₹<span id="packagePrice"></span></p>
+                <div class="card border p-3" style="max-height: 400px; overflow-y: auto;">
+                    <p id="packageDesc" class="text-break mb-0"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inclusions / Exclusions -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card p-3 mb-3">
+                    <h5>Inclusions</h5>
+                    <ul id="packageInclusions"></ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card p-3 mb-3">
+                    <h5>Exclusions</h5>
+                    <ul id="packageExclusions"></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- HTML -->
+        <div class="text-center my-4">
+            <a href="#" class="btn btn-success btn-lg rounded-pill" onclick="bookNowHandler()">
+                Book Now
+            </a>
+        </div>
+
+
+
+        <!-- Booking Modal -->
+        <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <form class="modal-content" id="bookingForm">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="bookingModalLabel">Book Package</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Package details (pre-filled, hidden) -->
+                        <input type="hidden" id="packageId" name="packageId">
+
+
+                        <div class="mb-3">
+                            <label class="form-label">Package Name</label>
+                            <input type="text" class="form-control" id="packageName" name="packageName" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Price</label>
+                            <input type="text" class="form-control" id="modalPackagePrice" name="packagePrice" readonly>
+
+                        </div>
+
+                        <!-- Customer input -->
+                        <div class="mb-3">
+                            <label class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="customerName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" id="customerEmail">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Phone</label>
+                            <input type="tel" class="form-control" id="customerPhone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-control" id="customerMessage" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Send Enquiry</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <script>
+        // Function to get URL parameters
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const packageId = getQueryParam("id"); // Get 'id' from URL
+            const packages = document.querySelectorAll(".package");
+
+            packages.forEach(pkg => {
+                if (pkg.id === packageId) {
+                    pkg.style.display = "block"; // Show the matching div
+                } else {
+                    pkg.style.display = "none"; // Hide others
+                }
+            });
+        });
+    </script>
+    <script>
+        async function loadPackageDetails() {
+            // 1. get `bid` from URL
+            const params = new URLSearchParams(window.location.search);
+            const bid = params.get('id') || params.get('bid');
+            if (!bid) {
+                document.getElementById('packageTitle').innerText = 'No package ID provided';
+                return;
+            }
+
+            try {
+                // 2. fetch details
+                const res = await fetch(`https://pharma1.shop/public/singleBook?bid=${bid}`);
+                if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
+                const pkg = await res.json();
+
+                // 3. populate fields
+                document.getElementById('packageTitle').innerText = pkg.booktitle || '-';
+                document.getElementById('packageImage').src = pkg.imagePath || '';
+                document.getElementById('packageImage').alt = pkg.booktitle || 'Package Image';
+                document.getElementById('packageDesc').innerText = pkg.description || '-';
+                document.getElementById('packageDuration').innerText = pkg.duration || '-';
+                document.getElementById('packageLocation').innerText = pkg.location || '-';
+                document.getElementById('packagePrice').innerText = pkg.descprice != null ? pkg.descprice : '-';
+
+                // 4. inclusions & exclusions (split by commas if needed)
+                const incList = (pkg.inclusions || '').split(',').map(s => s.trim()).filter(Boolean);
+                const excList = (pkg.exclusions || '').split(',').map(s => s.trim()).filter(Boolean);
+
+                const incUl = document.getElementById('packageInclusions');
+                incUl.innerHTML = incList.length
+                    ? incList.map(item => `<li style="color: #388E3C;">${item}</li>`).join('')
+                    : '<li>None</li>';
+
+                const excUl = document.getElementById('packageExclusions');
+                excUl.innerHTML = excList.length
+                    ? excList.map(item => `<li style="color: red;">${item}</li>`).join('')
+                    : '<li>None</li>';
+
+            } catch (err) {
+                console.error(err);
+                document.getElementById('packageTitle').innerText = 'Error loading package';
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', loadPackageDetails);
+    </script>
+
+    <script>
+        function bookNowHandler() {
+            const id = new URLSearchParams(window.location.search).get('id') || '';
+            const name = document.getElementById('packageTitle')?.innerText || '-';
+            const price = document.getElementById('packagePrice')?.innerText || '0';
+
+            openBookingModal(id, name, price);
+        }
+
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const authSection = document.getElementById("auth-section");
+            const logoutBtn = document.getElementById("logout-btn");
+            const name = localStorage.getItem("name");
+            const token = localStorage.getItem("token");
+
+            if (token && name) {
+                // Show greeting
+                authSection.innerHTML = `<span class="nav-item nav-link">Hello, ${name}</span>`;
+                // Show logout button
+                logoutBtn.style.display = "inline-block";
+
+                logoutBtn.addEventListener("click", () => {
+                    localStorage.removeItem("name");
+                    localStorage.removeItem("email");
+                    localStorage.removeItem("token");
+                    window.location.reload(); // or redirect if needed
+                });
+            } else {
+                // Show signup/login
+                authSection.innerHTML = `
+    <div id="auth-section">
+  <a href="../Auth.html" class="nav-item nav-link" id="auth-link">Signup/Login</a>
+  
+</div>
+<a
+  style="background-color: red; cursor: pointer; color: white; display: none;"
+  class="nav-item nav-link"
+  id="logout-btn"
+>
+  Logout
+</a>  
+      `;
+                logoutBtn.style.display = "none";
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function openBookingModal(id, name, price) {
+            document.getElementById('packageId').value = id;
+            document.getElementById('packageName').value = name;
+            document.getElementById('modalPackagePrice').value = price;
+            document.getElementById('customerEmail').value = localStorage.getItem('email') || '';
+            document.getElementById('customerName').value = localStorage.getItem('name') || '';
+
+            const modal = new bootstrap.Modal(document.getElementById('bookingModal'));
+            modal.show();
+        }
+
+        document.getElementById('bookingForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const data = {
+                packageId: document.getElementById('packageId').value,
+                planname: document.getElementById('packageName').value,
+                planprice: document.getElementById('modalPackagePrice').value,
+                status:"PENDING",
+                   customername: document.getElementById('customerName').value,
+            customerEmail: document.getElementById('customerEmail').value,
+                custmobile: document.getElementById('customerPhone').value,
+                message: document.getElementById('customerMessage').value
+            };
+
+            try {
+                const response = await fetch('https://pharma1.shop/public/savePlan', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    alert('Enquiry sent successfully!');
+                    bootstrap.Modal.getInstance(document.getElementById('bookingModal')).hide();
+                    document.getElementById('bookingForm').reset();
+                } else {
+                    alert('Failed to send enquiry.');
+                }
+            } catch (err) {
+                console.error('Error:', err);
+                alert('An error occurred while sending your enquiry.');
+            }
+        });
+    </script>
+
+</body>
+
+</html>

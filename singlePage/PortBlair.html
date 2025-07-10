@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Kips Tourism</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f4f4f9, #e0f7fa);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            margin: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        /* Fade-in animation for body */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Container styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('../img/Andman/sqRAFHCukP.jpg') center/cover no-repeat;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 48px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Package Sections */
+        .package {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .package img {
+            width: 150px;
+            height: 150px;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+
+        /* Fade-in up animation for package */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hover effect for package */
+        .package:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Package titles */
+        h4 {
+            color: #4CAF50;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        /* Includes/Excludes Section */
+        .includes, .excludes {
+            background-color: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        /* Excludes section with a different color */
+        .excludes {
+            background-color: #ffebee;
+        }
+
+        h3 {
+            color: #388E3C;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        /* List styles */
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+        .intro {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.intro h2 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.intro p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.intro p strong {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.intro p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .intro {
+        padding: 15px;
+    }
+
+    .intro h2 {
+        font-size: 20px;
+    }
+
+    .intro p {
+        font-size: 14px;
+    }
+}
+
+    </style>
+
+
+ <style>
+    .package img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-right: 20px;
+    }
+.nav-item{
+    color: black !important;
+}
+    @media (max-width: 768px) {
+        .package img {
+            height: 200px;
+        }
+    }
+
+ @media (max-width: 480px) {
+        .package img {
+            height: 150px;
+        }
+        .hero h1{
+            font-size: 20px;
+        }
+    }
+    
+</style>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark" style=" margin: 0; padding: 0;">
+    <a href="/" class="navbar-brand p-0">
+        <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Kips Tourism</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse" > 
+        <div class="navbar-nav ms-auto py-0">
+            <a href="/" class="nav-item nav-link active" >Home</a>
+            <a href="../about.html" class="nav-item nav-link">About Us</a>  
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-item nav-link dropdown-toggle" data-bs-toggle="dropdown">Destinations</a>
+                <div class="dropdown-menu m-0">
+                    <a href=".././Domastic.html" class="dropdown-item">Domastic Tours</a>
+                    <a href=".././international.html" class="dropdown-item">International Tours</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link nav-item dropdown-toggle" data-bs-toggle="dropdown">Jungle Safari</a>
+                <div class="dropdown-menu m-0">
+                    <a href="../singleCard/Kanha.html" class="dropdown-item">Kanha National Park</a>
+                    <a href="../singleCard/Pench.html" class="dropdown-item">Pench National Park</a>
+                    <a href="../singleCard/Tadoba.html" class="dropdown-item">Tadoba National Park</a>
+                    <a href="../singleCard/Gir.html" class="dropdown-item">Gir National Park</a>
+                    <a href="../singleCard/Ranthambore.html" class="dropdown-item">Ranthambore National Park</a>
+                    <a href="../singlePage/Jhalana.html?id1" class="dropdown-item">Bandipur National Park</a>
+                </div>
+            </div>
+            <a href="../contact.html" class="nav-item nav-link">Contact Details</a>
+        </div>
+    </div>
+</nav>
+    <div class="container">
+        <div class="hero">
+            <h1>Port Blair Tour Packages</h1>
+        </div>
+        <div class="intro">
+                                 <h2>Andaman & Nicobar - “Emerald, Blue and You”</h2>
+            <p>Replete with picturesque shimmering beaches, lagoons of turquoise blue waters and a bit of history, Andaman & Nicobar Islands is a little slice of paradise tucked around 1,400 km away from the east coast of India. The union territory comprises a total of 572 islands, only 37 of which are inhabited and a few are open to the tourists.</p>
+            <p>Port Blair, the capital city of Andaman & Nicobar Islands, is the gateway to the archipelago and is connected with various islands via multiple daily ferries. Havelock and Neil Island are some of the most famous islands among tourists and are known for pearly white sands, palm-lined shores and offer some of the best snorkelling and diving options in India.</p>
+            <p>Once known for its Cellular Jail- ‘Kaala Paani’ in Port Blair which primarily imprisoned the freedom fighters who were exiled from the mainland of India during the British Era, the graph of the Andaman and Nicobar islands has lately changed drastically and it is now known for its flourishing tourism industry which especially attracts honeymooners, families and adventure enthusiasts.</p>
+            <p>You can either laze around on the sandy shores and enjoy the mesmerising sunsets or try your hand at scuba diving and explore the vibrant coral reefs. Besides, it also has virgin immaculate backwaters for those seeking solitude and ataraxy.</p>
+            <p>Havelock Island is one of the largest and the most popular attractions of all of Andaman & Nicobar Islands. Blessed with pristine beaches and coconut groves, this one offers myriad adventure sports opportunities to its guests. From snorkelling to parasailing, scuba diving and kayaking, there is no dearth of thrilling activities here, for that much-needed adrenaline rush, on an otherwise tranquil leisure vacay.</p>
+            <p>In addition to this, you can visit the bustling city of Port Blair to get a glimpse of the local lifestyle. Steeped in colonial history and boasting of striking architectural monuments, you can also browse the local markets and savour the traditional cuisine.</p>
+                               </div>
+                           
+                               <div class="package">
+                                <img src="../img/Andman/fXSUaynO0Q.jpg" alt="Andaman & Nicobar Package">
+                                <div>
+                                    <h4>03 Night 04 Days - Andaman & Nicobar Islands</h4>
+                                    <p><strong>Day 01:</strong> Arrive at Port Blair – Fly into Port Blair Airport. Our representative will meet and assist you at Veer Savarkar Airport. Board the waiting vehicles, drive to your hotel, and check-in. First half of the day is at leisure. Later in the afternoon, visit the Cellular Jail followed by the Light and Sound Show. The Cellular Jail is a significant part of India’s freedom struggle, where many freedom fighters were imprisoned. The day ends with an emotional Sound and Light Show that highlights the history of the freedom fighters. Dinner and overnight stay at the hotel.</p>
+                                    <p><strong>Day 02:</strong> Port Blair – Ross Island – North Bay Island (Coral Island) – After breakfast, embark on a day-long three-island cruise. Visit Ross Island, the former British administrative headquarters, and North Bay Island, famous for snorkeling and glass-bottom boat rides (optional). Enjoy the serene beauty and marine life. Return to the hotel for an overnight stay.</p>
+                                    <p><strong>Day 03:</strong> Port Blair to Havelock Island – After breakfast, transfer to Havelock Island by cruise. Havelock is known for its pristine beaches and crystal-clear waters, ideal for snorkeling and scuba diving. Upon arrival, transfer to the hotel and relax. In the evening, visit Kalapathar Beach for a peaceful retreat. Dinner and overnight stay at the hotel.</p>
+                                    <p><strong>Day 04:</strong> Havelock Island – Neil Island – After breakfast, board the boat to Neil Island, known for its unexplored coral reefs, white sandy beaches, and tropical forests. On arrival, our representative will escort you to check-in at the resort. Later, enjoy sightseeing at Laxmanpur, Bharatpur, and Howrah Bridge beaches. These serene spots are perfect for a relaxed day. In the evening, return to Port Blair for an overnight stay.</p>
+                                    <p><strong>Day 05:</strong> Departure – After breakfast, check-out from the hotel and transfer to the airport with beautiful memories of an unforgettable holiday at the Andaman Islands.</p>
+                                </div>
+                            </div>
+                            
+                       
+                               
+                              
+                            <div class="includes">
+                                <h3>Includes:</h3>
+                                <ul>
+                                    <li>Accommodation on double sharing basis at above mentioned hotels / similar in base category rooms</li>
+                                    <li>Exclusive a/c vehicle for pick up and drop as per the itinerary (not at disposal)</li>
+                                    <li>Meal Plan As per Option</li>
+                                    <li>Airport pick up and drop</li>
+                                    <li>Makruzz / Green Ocean Cruise / Coastal Cruise / Govt. interisland ferry for Neil & Havelock as per the availability</li>
+                                    <li>Assistance at all arrival and departure points</li>
+                                    <li>Entry permits | Entry tickets | Parking charges | Boat / ferry tickets wherever applicable</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="excludes">
+                                <h3>Excludes:</h3>
+                                <ul>
+                                    <li>Airfare / Ship's fare</li>
+                                    <li>All kind of personal expenses such as tips, laundry, telephone bills and beverages</li>
+                                    <li>It does not include any meals unless and otherwise specifically mentioned</li>
+                                    <li>Guide, Jolly ride & snorkeling charges</li>
+                                    <li>Optional, suggested or unspecified activities</li>
+                                    <li>Guide at Cellular jail will cost extra</li>
+                                    <li>Camera fee (still or movie)</li>
+                                    <li>Additional usage of vehicles</li>
+                                </ul>
+                            </div>
+                            
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Kips Tourism</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f4f4f9, #e0f7fa);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            margin: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        /* Fade-in animation for body */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Container styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hero Section */
+  
+
+        .hero h1 {
+            color: steelblue;
+            font-size: 48px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Package Sections */
+        .package {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .package img {
+            width:180vh;
+            height: 70vh;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+
+        /* Fade-in up animation for package */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hover effect for package */
+        .package:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Package titles */
+        h4 {
+            color: #4CAF50;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        /* Includes/Excludes Section */
+        .includes, .excludes {
+            background-color: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        /* Excludes section with a different color */
+        .excludes {
+            background-color: #ffebee;
+        }
+
+        h3 {
+            color: #388E3C;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        /* List styles */
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+        .intro {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.intro h2 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.intro p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.intro p strong {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.intro p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .intro {
+        padding: 15px;
+    }
+
+    .intro h2 {
+        font-size: 20px;
+    }
+
+    .intro p {
+        font-size: 14px;
+    }
+}
+
+    </style>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet"> 
+
+ <!-- Icon Font Stylesheet -->
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+ <!-- Libraries Stylesheet -->
+ <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+ <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+
+ <!-- Customized Bootstrap Stylesheet -->
+ <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+ <!-- Template Stylesheet -->
+ <link href="../css/style.css" rel="stylesheet">
+
+ <style>
+    .package img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-right: 20px;
+    }
+.nav-item{
+    color: black !important;
+}
+    @media (max-width: 768px) {
+        .package img {
+            height: 200px;
+        }
+    }
+
+ @media (max-width: 480px) {
+        .package img {
+            height: 150px;
+        }
+        .hero h1{
+            font-size: 20px;
+        }
+    }
+    
+</style>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark" style=" margin: 0; padding: 0;">
+    <a href="/" class="navbar-brand p-0">
+        <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Kips Tourism</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse" > 
+        <div class="navbar-nav ms-auto py-0">
+            <a href="/" class="nav-item nav-link active" >Home</a>
+            <a href="../about.html" class="nav-item nav-link">About Us</a>  
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-item nav-link dropdown-toggle" data-bs-toggle="dropdown">Destinations</a>
+                <div class="dropdown-menu m-0">
+                    <a href=".././Domastic.html" class="dropdown-item">Domastic Tours</a>
+                    <a href=".././international.html" class="dropdown-item">International Tours</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link nav-item dropdown-toggle" data-bs-toggle="dropdown">Jungle Safari</a>
+                <div class="dropdown-menu m-0">
+                    <a href="../singleCard/Kanha.html" class="dropdown-item">Kanha National Park</a>
+                    <a href="../singleCard/Pench.html" class="dropdown-item">Pench National Park</a>
+                    <a href="../singleCard/Tadoba.html" class="dropdown-item">Tadoba National Park</a>
+                    <a href="../singleCard/Gir.html" class="dropdown-item">Gir National Park</a>
+                    <a href="../singleCard/Ranthambore.html" class="dropdown-item">Ranthambore National Park</a>
+                    <a href="../singlePage/Jhalana.html?id1" class="dropdown-item">Bandipur National Park</a>
+                </div>
+            </div>
+            <a href="../contact.html" class="nav-item nav-link">Contact Details</a>
+        </div>
+    </div>
+</nav>
+    <!-- <button style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;" onclick="history.back()">Back</button> -->
+
+    <div class="container" style="margin-top: 50px;" class="img-fluid">
+        <div class="hero">
+      <center>
+        <h1 >Seychells Tours</h1>
+      </center>     
+        </div>
+       
+        <div class="package" id="1">
+            <img src="../img/Seychelles/D0ZBYnDERY.jpg" alt="Dwarka Package">
+            <div>
+                <center class="my-5">
+           <h4>5 Nights and 6 Days</h4>
+           </center>
+           <h5>Day 1: ARRIVE SEYCHELLES (MAHE AIRPORT)</h5>
+                <p>As you arrive at the airport in Mahe, the tour agent’s representative will assist you in getting transferred to your hotel in Mahe. Upon arrival at the hotel in Mahe, check in and relax as the remaining part of the first day of your Seychelles tour is at leisure. A relaxing day ends with a comfortable overnight stay at the hotel.</p>
+        
+                <h5>Day 2: REEF SAFARI (Optional)</h5>
+                <p>After a delicious breakfast at the hotel, explore the Sainte Anne Marine Park on this exciting full-day excursion, jam-packed with activities. Set sail aboard Anahita as you head off to discover Mahé's inner islands. Hop aboard a semi-submersible vessel to explore the depths of the Marine Park. Enjoy a BBQ lunch and musical entertainment before heading ashore Moyenne Island. Visit the island, meet the Giant Tortoises, explore old ruins and pirate graves, or relax on the private beach. The day ends with a tropical cocktail and a leisurely cruise back to Mahe. Evening return to the hotel and overnight stay with dinner.</p>
+        
+                <h5>Day 3: MAHE DISCOVERY TOUR (Optional)</h5>
+                <p>Experience the diversity and inspiring scenic beauty of Mahé, Seychelles' largest and most populated island. Begin with a tour of the capital, Victoria, and visit places of interest such as the Victoria Clock Tower and the colourful Sir Selwyn-Selwyn Clark Marketplace. Travel through Sans Souci, lush forests, and tea plantations along one of the most scenic routes in Seychelles. Stop at the historic Mission Lodge, enjoy a Creole Buffet in a local restaurant, visit a historic herb & spice garden, and explore a local village to experience Creole culture.</p>
+        
+                <h5>Day 4: ISLAND COMBO PRASLIN & LA DIGUE (Optional)</h5>
+                <p>Join an unforgettable action-packed, full-day guided tour of two of Seychelles' most enchanting islands, Praslin and La Digue. Visit the prehistoric forest of Vallée de Mai and be mesmerised by its unique beauty before heading to the world-renowned Anse Lazio beach. Enjoy a delicious Créole lunch. On La Digue, visit the picturesque harbour and La Passe village, experience Créole architecture, historical sites such as L'Union Estate, the Copra Mill, and the famous beach, Anse Source d'Argent.</p>
+        
+                <h5>Day 5: A GOODBYE DAY</h5>
+                <p>Savor one more breakfast at the hotel before completing check-out formalities. Spend the day at leisure on the beach. In the evening, admire the sight of Victoria and the surrounding islands. Later, enjoy leisure time before your transfer to the airport for your flight back home.</p>
+    
+        </div>
+            <div class="includes">
+                <h3>Package Inclusion:</h3>
+                <ul>
+                    <li>Hotel or Resort Accommodation on Double Sharing Basis</li>
+                    <li>Daily Breakfast at Hotel</li>
+                    <li>Airport Pick up & Drop on SIC Basis</li>
+                    <li>All Local Sightseeing and Transfers by SIC Basis (Optional)</li>
+                    <li>All Taxes</li>
+                    <li>Visa On Arrival</li>
+                </ul>
+            </div>
+            
+            <div class="excludes">
+                <h3>Package Excludes:</h3>
+                <ul>
+                    <li>Airfare</li>
+                    <li>Any Services not mentioned in the inclusion column</li>
+                </ul>
+            </div>
+        </div>
+     
+   
+
+   
+    </div>
+    <script>
+        // Function to get URL parameters
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+    
+        document.addEventListener("DOMContentLoaded", function () {
+            const packageId = getQueryParam("id"); // Get 'id' from URL
+            const packages = document.querySelectorAll(".package");
+    
+            packages.forEach(pkg => {
+                if (pkg.id === packageId) {
+                    pkg.style.display = "block"; // Show the matching div
+                } else {
+                    pkg.style.display = "none"; // Hide others
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>

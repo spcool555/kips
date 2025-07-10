@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Kips Tourism </title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- Icon Font Stylesheet -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Libraries Stylesheet -->
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Spinner Start -->
+  <div id="spinner"
+    class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+  <!-- Spinner End -->
+
+
+
+  <div class="container-fluid position-relative p-0">
+    <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+      <a href="" class="navbar-brand p-0">
+        <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Kips Tourism</h1>
+        <!-- <img src="img/logo.png" alt="Logo"> -->
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="fa fa-bars"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto py-0">
+          <a href="/" class="nav-item nav-link active">Home</a>
+          <a href=".././about.html" class="nav-item nav-link">About Us</a>
+          <a href="history.html" class="nav-item nav-link">Booking History</a>
+
+          <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Destinations</a>
+            <div class="dropdown-menu m-0">
+              <a  href="Domestic.html" class="dropdown-item">Domestic Tours</a>
+              <a href="international.html" class="dropdown-item">International Tours</a>
+
+            </div>
+          </div>
+
+
+          <!-- <a href="services.html" class="nav-item nav-link">Services</a> -->
+          <!-- <a href="packages.html" class="nav-item nav-link">Packages</a> -->
+          <!-- <a href="blog.html" class="nav-item nav-link">Blog</a> -->
+          <div  class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Jungle Safari</a>
+            <div class="dropdown-menu m-0">
+              <a href="../singleCard/Kanha.html" class="dropdown-item">Kanha National Park</a>
+              <a href="../singleCard/Pench.html" class="dropdown-item">Pench National Park</a>
+              <a href="../singleCard/Tadoba.html" class="dropdown-item">Tadoba National Park</a>
+              <a href="../singleCard/Gir.html" class="dropdown-item">Gir National Park</a>
+              <a href="../singleCard/Ranthambore.html" class="dropdown-item">Ranthambore National Park</a>
+              <a href="../singlePage/Jhalana.html?id=1" class="dropdown-item">Bandipur National Park</a>
+
+            </div>
+          </div>
+
+          <a href=".././contact.html" class="nav-item nav-link">Contact Details</a>
+          <div id="auth-section">
+            <a href="./Auth.html" class="nav-item nav-link" id="auth-link">Signup/Login</a>
+
+          </div>
+          <a style="background-color: red; cursor: pointer; color: white; display: none;" class="nav-item nav-link"
+            id="logout-btn">
+            Logout
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Carousel Start -->
+   <br><br><br><br>
+    <!-- Carousel End -->
+  </div>
+  <!-- Header End -->
+
+  <!-- About Start -->
+
+  <!-- About End -->
+
+  <!-- Travel Guide Start -->
+  <div class="container-fluid guide py-5">
+    <div class="container">
+      <h2 class="mb-4">Booking History</h2>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped" id="historyTable">
+          <thead class="table-dark">
+            <tr>
+              <th>#</th>
+              <th>Customer Name</th>
+              <th>Email</th>
+              <th>Mobile</th>
+              <th>Package Name</th>
+              <th>Price (₹)</th>
+              <th>Status</th>
+              <th>Message</th>
+            </tr>
+          </thead>
+          <tbody id="historyBody">
+            <tr>
+              <td colspan="8" class="text-center">Loading history...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Travel Guide End -->
+
+  <!-- Subscribe Start -->
+  <div class="container-fluid subscribe py-5">
+    <div class="container text-center py-5">
+      <div class="mx-auto text-center" style="max-width: 900px;">
+        <h5 class="subscribe-title px-3">Subscribe</h5>
+        <h1 class="text-white mb-4">Our Newsletter</h1>
+
+        <div class="position-relative mx-auto">
+          <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text"
+            placeholder="Your email">
+          <button type="button"
+            class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Subscribe End -->
+
+  <!-- Footer Start -->
+  <div class="container-fluid footer py-4">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-md-6 col-lg-6 col-xl-3">
+          <div class="footer-item d-flex flex-column">
+            <h4 class=" text-white">Get In Touch</h4>
+            <a href="">CORPORATE OFFICE :-
+              <br />
+               3, Gunjar Apartment, Laxmi Nagar, WHC Road, Nagpur,Pin:-440022. <BR>Maharashtra,India.
+              <br />
+             BRANCH OFFICE :-
+              <br />
+              M2-13,B.N Complex Al Muteena, Dubai, UAE.</a>
+
+
+
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-6 col-xl-3">
+          <div class="footer-item d-flex flex-column">
+            <h4 class=" text-white">Company</h4>
+            <a href="about.html"><i class="fas fa-angle-right me-2"></i> About</a>
+            <a href="./contact.html"><i class="fas fa-angle-right me-2"></i> Contact Us</a>
+
+
+
+
+
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-6 col-xl-3">
+          <div class="footer-item d-flex flex-column">
+            <h4 class=" text-white">Contact Details</h4>
+            <a href="">kipstourismllc@gmail.com</a>
+            <a href="">+971551896200/(+91)8484072402</a>
+            <br>
+            <div class="d-flex align-items-center">
+              <i class="fas fa-share fa-2x text-white me-2"></i>
+              <a class="btn-square btn btn-primary rounded-circle mx-1"
+                href="" target="_blank"><i
+                  class="fab fa-facebook-f"></i></a>
+
+              <a class="btn-square btn btn-primary rounded-circle mx-1"
+                href="" target="_blank"><i
+                  class="fab fa-instagram"></i></a>
+
+            </div>
+
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-6 col-xl-3">
+          <img style="width: 100%;" src="./img/logokips.png"
+            alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer End -->
+
+  <!-- Copyright Start -->
+  <div class="container-fluid copyright text-body py-4">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-md-6 text-center text-md-end mb-md-0">
+          <i class="fas fa-copyright me-2"></i><a class="text-white" href="#">Kips Tourism</a>, All right reserved.
+        </div>
+        <div class="col-md-6 text-center text-md-start">
+          <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+          <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+          <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+          Developed By <a class="text-white" href=""> Decofurn multisoultions</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Copyright End -->
+
+  <!-- Back to Top -->
+ <a href="https://wa.me/971551896200" target="_blank" class="btn-md-square back-to-top">
+  <img style="width: 4em;" src="https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-whatsapp-phone-icon-png-image_6315989.png" alt="WhatsApp Chat">
+</a>
+    <script>
+      async function fetchBookingHistory() {
+        try {
+          const response = await fetch('https://pharma1.shop/public/getByuseremail?useremail=' + localStorage.getItem('email'));
+          if (!response.ok) throw new Error('Failed to fetch history');
+
+          const data = await response.json();
+          const historyBody = document.getElementById('historyBody');
+          historyBody.innerHTML = '';
+
+          if (!Array.isArray(data) || data.length === 0) {
+            historyBody.innerHTML = `<tr><td colspan="8" class="text-center">No booking history found.</td></tr>`;
+            return;
+          }
+
+          data.forEach((item, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+          <td>${index + 1}</td>
+          <td>${item.customername || 'N/A'}</td>
+          <td>${item.customerEmail || 'N/A'}</td>
+          <td>${item.custmobile || 'N/A'}</td>
+          <td>${item.planname || 'N/A'}</td>
+          <td>₹${item.planprice || 0}</td>
+          <td>${item.status || 'N/A'}</td>
+          <td>${item.message || ''}</td>
+        `;
+            historyBody.appendChild(row);
+          });
+        } catch (error) {
+          console.error(error);
+          document.getElementById('historyBody').innerHTML =
+            `<tr><td colspan="8" class="text-danger text-center">Error loading data.</td></tr>`;
+        }
+      }
+
+      // Call on page load
+      document.addEventListener('DOMContentLoaded', fetchBookingHistory);
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const authSection = document.getElementById("auth-section");
+        const logoutBtn = document.getElementById("logout-btn");
+        const name = localStorage.getItem("name");
+        const token = localStorage.getItem("token");
+
+        if (token && name) {
+          // Show greeting
+          authSection.innerHTML = `<span class="nav-item nav-link">Hello, ${name}</span>`;
+          // Show logout button
+          logoutBtn.style.display = "inline-block";
+
+          logoutBtn.addEventListener("click", () => {
+            localStorage.removeItem("name");
+            localStorage.removeItem("email");
+            localStorage.removeItem("token");
+            window.location.reload(); // or redirect if needed
+          });
+        } else {
+          // Show signup/login
+          authSection.innerHTML = `
+    <div id="auth-section">
+  <a href="./Auth.html" class="nav-item nav-link" id="auth-link">Signup/Login</a>
+  
+</div>
+<a
+  style="background-color: red; cursor: pointer; color: white; display: none;"
+  class="nav-item nav-link"
+  id="logout-btn"
+>
+  Logout
+</a>  
+      `;
+          logoutBtn.style.display = "none";
+        }
+      });
+    </script>
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
