@@ -949,7 +949,7 @@ M2-13,B.N Complex Al Muteena, Dubai, UAE. </a>
                     <h4 class=" text-white">Company</h4>
                     <a href="about.html"><i class="fas fa-angle-right me-2"></i> About</a>  
                     <a href="./contact.html"><i class="fas fa-angle-right me-2"></i> Contact Us</a>    
-                     <a href="http://localhost:5502/admin.html"><i class="fas fa-angle-right me-2"></i> Admin</a> 
+                     <a href="./admin.html"><i class="fas fa-angle-right me-2"></i> Admin</a> 
                    
                     
              
@@ -1122,7 +1122,7 @@ function generateStars(count) {
 </script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-    fetch('http://localhost:8007/public/getAllreviews')  // Fixed URL
+    fetch('https://kipstourism.com/api/public/getAllreviews')  // Fixed URL
         .then(response => response.json())
         .then(data => {
             const container = document.getElementById('testimonial-container');
@@ -1233,7 +1233,7 @@ function generateStars(count) {
     };
 
     try {
-      const response = await fetch('http://localhost:8007/public/saveReviewsData', {
+      const response = await fetch('https://kipstourism.com/api/public/saveReviewsData', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
