@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           alert("Registration successful!");
           
-          window.location.href = "/";
+          // window.location.href = "/";
         } else {
           alert("Registration failed!");
         }
