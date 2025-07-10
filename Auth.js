@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           alert("Registration successful!");
           
-          // window.location.href = "/";
+          window.location.href = "/";
         } else {
           alert("Registration failed!");
         }
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
           localStorage.setItem("name", result.body.name);
           localStorage.setItem("email", result.body.uname);
           localStorage.setItem("token", result.body.token);
-
+          localStorage.setItem("role", result.body.role);
           alert("Login successful!");
           window.location.href = "/";
         } else {
