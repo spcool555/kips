@@ -69,7 +69,7 @@
                     <div class="navbar-nav ms-auto py-0">
                         <a href="/" class="nav-item nav-link active">Home</a>
                       <a href=".././about.html" class="nav-item nav-link">About Us</a>
-                    <a href="history.html" class="nav-item nav-link">Booking History</a>
+                    <a href="history.html"  id="bookhist"  class="nav-item nav-link">My Bookings</a>
                        
                         
                         <!-- <a href="services.html" class="nav-item nav-link">Services</a> -->
@@ -231,7 +231,25 @@ M2-13,B.N Complex Al Muteena, Dubai</a>
 
         <!-- Back to Top -->
          <a href="https://wa.me/8484072402" target="_blank" class="btn-md-square back-to-top"><img style="width: 7em;" src="https://investera.com/wp-content/uploads/2020/08/GAC_Whatsapp-chat-icon-EN.png" alt="">
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const role = localStorage.getItem("role");
+    const adminLink = document.getElementById("adminLink");
+    const bookhist = document.getElementById("bookhist");
 
+    if (role === "ADMIN") {
+      adminLink.style.display = "inline-block"; // or "block" if it's in a list
+    } else {
+      adminLink.style.display = "none";
+    }
+  if (role) {
+      bookhist.style.display = "inline-block"; // or "block" if it's in a list
+    } else {
+      bookhist.style.display = "none";
+    }
+
+  });
+</script>
         
         <!-- JavaScript Libraries -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>

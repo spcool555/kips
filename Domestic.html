@@ -59,7 +59,7 @@
                 <div class="navbar-nav ms-auto py-0">
                     <a href="/" class="nav-item nav-link active">Home</a>
                       <a href=".././about.html" class="nav-item nav-link">About Us</a>
-                    <a href="history.html" class="nav-item nav-link">Booking History</a>
+                    <a href="history.html"  id="bookhist"  class="nav-item nav-link">My Bookings</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Destinations</a>
                         <div class="dropdown-menu m-0">
@@ -187,11 +187,11 @@ M2-13,B.N Complex Al Muteena, Dubai, UAE.</a>
                         <div class="d-flex align-items-center">
                             <i class="fas fa-share fa-2x text-white me-2"></i>
                             <a class="btn-square btn btn-primary rounded-circle mx-1"
-                                href="" target="_blank"><i
+                                href="https://www.facebook.com/profile.php?id=61577937646535" target="_blank"><i
                                     class="fab fa-facebook-f"></i></a>
 
                             <a class="btn-square btn btn-primary rounded-circle mx-1"
-                                href=""
+                                href="https://www.instagram.com/kipstourismllc/"
                                 target="_blank"><i class="fab fa-instagram"></i></a>
 
                         </div>
@@ -200,7 +200,7 @@ M2-13,B.N Complex Al Muteena, Dubai, UAE.</a>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <img style="width: 100%;"
-                        src="./img/logokips.png"
+                        src="./img/LOGO 3.jpg"
                         alt="">
                 </div>
             </div>
@@ -319,7 +319,25 @@ M2-13,B.N Complex Al Muteena, Dubai, UAE.</a>
             window.addEventListener('DOMContentLoaded', loadPackages);
         </script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const role = localStorage.getItem("role");
+    const adminLink = document.getElementById("adminLink");
+    const bookhist = document.getElementById("bookhist");
 
+    if (role === "ADMIN") {
+      adminLink.style.display = "inline-block"; // or "block" if it's in a list
+    } else {
+      adminLink.style.display = "none";
+    }
+  if (role) {
+      bookhist.style.display = "inline-block"; // or "block" if it's in a list
+    } else {
+      bookhist.style.display = "none";
+    }
+
+  });
+</script>
 
 
         <!-- Template Javascript -->

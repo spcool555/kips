@@ -30,6 +30,37 @@
 
         <script src="nationaldata.js"></script>
         <script src="data.js"></script>
+
+  <style>
+    .destination-img {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .destination-img img {
+      transition: transform 0.3s ease;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .destination-img:hover img {
+      transform: scale(1.05);
+    }
+
+    .destination-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 1rem;
+    }
+
+    .btn-hover:hover {
+      text-decoration: underline;
+    }
+  </style>
         <style>
 
 .imgs{
@@ -282,7 +313,7 @@
                     <div class="navbar-nav ms-auto py-0">
                         <a href="/" class="nav-item nav-link active">Home</a>
                       <a href=".././about.html" class="nav-item nav-link">About Us</a>
-                    <a href="history.html" class="nav-item nav-link">Booking History</a>
+                    <a href="history.html" id="bookhist" class="nav-item nav-link">My Bookings</a>
                     
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Destinations</a>
@@ -391,230 +422,42 @@ Our mission is to take you beyond the typical tourist trails—blending offbeat 
 
 
        <!-- Destination Domestic Start -->
-       <div class="container-fluid destination py-5">
-        <div class="container py-5">
-            <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-                <h5 class="section-title px-3">Destination</h5>
-                <h1 class="mb-0">Domestic Tours</h1>
-            </div>
-            <div class="tab-class text-center">
-              
-                <div class="tab-content">
-                    <div id="tab-1" class="tab-pane fade show p-0 active">
-                        <div class="row g-4">
-                            <div class="col-xl-8">
-                                <div class="row g-4">
-                                    <div class="col-lg-6">
-                                        <div class="destination-img">
-                                            <img class="img-fluid rounded w-100" src="./img/Kerala/kerala.jpg" alt="">
-                                            <div class="destination-overlay p-4">
-                                                <a href="./singleCard/Kerala.html" class="btn btn-primary text-white rounded-pill border py-2 px-3">Kerala Tour</a><br>
-                                                <!-- <h4 class="text-white mb-2 mt-3">4 Nights and 5 Days</h4> -->
-                                                <a href="./singleCard/Kerala.html" class="btn-hover text-white">View All Details <i class="fa fa-arrow-right ms-2"></i></a>
-                                            </div>
-                                           
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="destination-img">
-                                            <img class="img-fluid rounded w-100" src="./img/Himachal/himachal.jpg" alt="">
-                                            <div class="destination-overlay p-4">
-                                                <a href="./singleCard/Himachal.html" class="btn btn-primary text-white rounded-pill border py-2 px-3">Himachal Tour</a> <br>
-                                                <!-- <h4 class="text-white mb-2 mt-3">5 Nights and 6 Days</h4> -->
-                                                <a href="./singleCard/Himachal.html" class="btn-hover text-white">View All Details <i class="fa fa-arrow-right ms-2"></i></a>
-                                            </div>
-                                          
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="destination-img">
-                                            <img class="img-fluid rounded w-100" src="https://media.istockphoto.com/id/1323846766/photo/a-beautiful-view-of-dal-lake-in-winter-srinagar-kashmir-india.jpg?s=612x612&w=0&k=20&c=Dp3peie2t-jdLEmqe4W-DD09GACu2Cr-JjHHeB6rpBc=" alt="">
-                                            <div class="destination-overlay p-4">
-                                                <a href="./singleCard/Kashmir.html" class="btn btn-primary text-white rounded-pill border py-2 px-3">Kashmir Tour</a> <br>
-                                                <!-- <h4 class="text-white mb-2 mt-3">5 Nights and 6 Days</h4> -->
-                                                <a href="./singleCard/Kashmir.html" class="btn-hover text-white">View All Details <i class="fa fa-arrow-right ms-2"></i></a>
-                                            </div>
-                                          
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="destination-img">
-                                            <img class="img-fluid rounded w-100" src="./img/North East/NorthEast.jpg" alt="">
-                                            <div class="destination-overlay p-4">
-                                                <a href="./singleCard/Notheastindia.html" class="btn btn-primary text-white rounded-pill border py-2 px-3">North East India</a> <br>
-                                                <!-- <h4 class="text-white mb-2 mt-3">5 Nights and 6 Days</h4> -->
-                                                <a href="./singleCard/Notheastindia.html" class="btn-hover text-white">View All Details <i class="fa fa-arrow-right ms-2"></i></a>
-                                            </div>
-                                          
-                                        </div>
-                                    </div>
-                                   
-                                   
-                                  
-                                </div>
-                            </div>
-                    
-                            <div class="col-lg-4">
-                                <div class="destination-img">
-                                    <img class="img-fluid rounded w-100" src="./img/Goa/goa.jpg" alt="">
-                                    <div class="destination-overlay p-4">
-                                        <a href="./singleCard/goa.html" class="btn btn-primary text-white rounded-pill border py-2 px-3">Goa Tour</a> <br>
-                                        <!-- <h4 class="text-white mb-2 mt-3">Los angelas</h4> -->
-                                        <a href="./singleCard/goa.html" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                    <div class="search-icon">
-                                        <!-- <a href="./" data-lightbox="destination-6"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a> -->
-                                    </div>
-                                </div>
-                                <div class="destination-img" style="margin-top: 8%;">
-                                    <img class="img-fluid rounded w-100" src="./img/Karnataka/karnataka.jpg" alt="">
-                                    <div class="destination-overlay p-4">
-                                        <a href="./singleCard/Karnataka.html" class="btn btn-primary text-white rounded-pill border py-2 ">Karnataka</a> <br>
-                                        <!-- <h4 class="text-white mb-2 mt-3">Los angelas</h4> -->
-                                        <a href="./singleCard/Karnataka.html" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                    <div class="search-icon">
-                                        <!-- <a href="./" data-lightbox="destination-6"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                 
-              
-                  
-               
-                </div>
-            </div>
-        </div>
-      <center> <a href="/Domestic.html" class="btn btn-primary">Show More</a> </center>  
+    <div class="container-fluid destination py-5">
+  <div class="container py-5">
+    <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+      <h5 class="section-title px-3">Destination</h5>
+      <h1 class="mb-0">Domastic Tours</h1>
     </div>
-    <!-- Destination Domestic End -->
 
-        <!-- Destination International Start -->
-        <div class="container-fluid destination py-5">
-            <div class="container py-5">
-                <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-                    <h5 class="section-title px-3">Destination</h5>
-                    <h1 class="mb-0">International Tours</h1>
-                </div>
-                <div class="tab-class text-center">
-                    <!-- <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
-                        <li class="nav-item">
-                            <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill " data-bs-toggle="pill" href="#tab-8">
-                                <span class="text-dark" style="width: 150px;">Thailand</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="d-flex py-2 mx-3 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab-2">
-                                <span class="text-dark" style="width: 150px;">Dubai</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab-6">
-                                <span class="text-dark" style="width: 150px;">Singapore</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill active" data-bs-toggle="pill" href="#tab-1">
-                                <span class="text-dark" style="width: 150px;">Bali</span>
-                            </a>
-                        </li>
-                       
-                      
-                    </ul> -->
-                    <div class="tab-content">
-                        <div id="tab-1" class="tab-pane fade show p-0 active">
-                            <div class="row g-4">
-                                <div class="col-xl-8">
-                                    <div class="row g-4">
-                                        <div class="col-lg-6">
-                                            <div class="destination-img">
-                                                <img class="img-fluid rounded w-100 imgs" src="./img/Bali/bali.jpg" alt="">
-                                                <div class="destination-overlay p-4">
-                                                    <a href="./singleCard/Bali.html" class="btn btn-primary text-white rounded-pill border py-2 px-3">Bali Tour</a> <br>
-                                                    <!-- <h4 class="text-white mb-2 mt-3">4 Nights and 5 Days</h4> -->
-                                                    <a href="./singleCard/Bali.html" class="btn-hover text-white">View All Details <i class="fa fa-arrow-right ms-2"></i></a>
-                                                </div>
-                                               
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="destination-img">
-                                                <img class="img-fluid rounded w-100  imgs" src="./img/Thailand/thailand.jpg" alt="">
-                                                <div class="destination-overlay p-4">
-                                                    <a href="./singleCard/Thailand.html" class="btn btn-primary text-white rounded-pill border py-2 px-3">Thailand Tour</a><br>
-                                                    <!-- <h4 class="text-white mb-2 mt-3">5 Nights and 6 Days</h4> -->
-                                                    <a href="./singleCard/Thailand.html" class="btn-hover text-white">View All Details <i class="fa fa-arrow-right ms-2"></i></a>
-                                                </div>
-                                              
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="destination-img">
-                                                <img class="img-fluid rounded w-100 imgs" src="./img/Singapore/singapore-city-skyline-P238A3R.jpg" alt="">
-                                                <div class="destination-overlay p-4">
-                                                    <a href="./singleCard/Singapore.html" class="btn btn-primary text-white rounded-pill border py-2 px-3">Singapore Tour</a><br>
-                                                    <!-- <h4 class="text-white mb-2 mt-3">5 Nights and 6 Days</h4> -->
-                                                    <a href="./singleCard/Singapore.html" class="btn-hover text-white">View All Details <i class="fa fa-arrow-right ms-2"></i></a>
-                                                </div>
-                                              
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="destination-img">
-                                                <img class="img-fluid rounded w-100 imgs" src="./img/SriLanka/srilanka.jpg" alt="">
-                                                <div class="destination-overlay p-4">
-                                                    <a href="./singleCard/Srilanka.html" class="btn btn-primary text-white rounded-pill border py-2 px-3">Sri Lanka Tour</a><br>
-                                                    <!-- <h4 class="text-white mb-2 mt-3">5 Nights and 6 Days</h4> -->
-                                                    <a href="./singleCard/Srilanka.html" class="btn-hover text-white">View All Details <i class="fa fa-arrow-right ms-2"></i></a>
-                                                </div>
-                                              
-                                            </div>
-                                        </div>
-                                       
-                                      
-                                    </div>
-                                </div>
-                        
-                                <div class="col-lg-4">
-                                    <div class="destination-img">
-                                        <img class="img-fluid rounded w-100 imgs" src="./img/Dubai/2Nuoflcf2C.jpg" alt="">
-                                        <div class="destination-overlay p-4">
-                                            <a href="./singleCard/dubai.html" class="btn btn-primary text-white rounded-pill border py-2 px-3">Dubai Tour</a> <br>
-                                            <!-- <h4 class="text-white mb-2 mt-3">Los angelas</h4> -->
-                                            <a href="./singleCard/dubai.html" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
-                                        </div>
-                                        <div class="search-icon">
-                                            <!-- <a href="img/destination-6.jpg" data-lightbox="destination-6"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a> -->
-                                        </div>
-                                    </div>
-                                    <div class="destination-img" style="margin-top: 7%;">
-                                        <img class="img-fluid rounded w-100 imgs" src="./img/Maldives/FGSqt9c1Vu.jpg" alt="">
-                                        <div class="destination-overlay p-4">
-                                            <a href="./singleCard/Maldives.html" class="btn btn-primary text-white rounded-pill border py-2 px-3">Maldives Tour</a> <br>
-                                            <!-- <h4 class="text-white mb-2 mt-3">Los angelas</h4> -->
-                                            <a href="./singleCard/Maldives.html" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
-                                        </div>
-                                        <div class="search-icon">
-                                            <!-- <a href="img/destination-6.jpg" data-lightbox="destination-6"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                  
-                
-                
-                   
-                 
-                    </div>
-                </div>
-            </div>
-            <center> <a href="/international.html" class="btn btn-primary">Show More</a> </center>  
-        </div>
-        <!-- Destination International End -->
+    <!-- Dynamic Content -->
+    <div class="container" id="domastic-tour-container">
+      <div class="text-center">Loading destinations...</div>
+    </div>
+
+    <center>
+      <a href="/Domestic.html" class="btn btn-primary mt-4">Show More</a>
+    </center>
+  </div>
+</div>
+    <!-- Destination Domestic End -->
+<div class="container-fluid destination py-5">
+  <div class="container py-5">
+    <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+      <h5 class="section-title px-3">Destination</h5>
+      <h1 class="mb-0">International Tours</h1>
+    </div>
+
+    <!-- Dynamic Content -->
+    <div class="container" id="international-tour-container">
+      <div class="text-center">Loading destinations...</div>
+    </div>
+
+    <center>
+      <a href="/international.html" class="btn btn-primary mt-4">Show More</a>
+    </center>
+  </div>
+</div>
+
 
         <!-- Explore Tour Start -->
     
@@ -968,7 +811,7 @@ M2-13,B.N Complex Al Muteena, Dubai, UAE. </a>
                    <br>
                   <div class="d-flex align-items-center">
                         <i class="fas fa-share fa-2x text-white me-2"></i>
-                        <a class="btn-square btn btn-primary rounded-circle mx-1" href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn-square btn btn-primary rounded-circle mx-1" href="https://www.facebook.com/profile.php?id=61577937646535" target="_blank"><i class="fab fa-facebook-f"></i></a>
                 
                         <a class="btn-square btn btn-primary rounded-circle mx-1" href="https://www.instagram.com/kipstourismllc/" target="_blank"><i class="fab fa-instagram"></i></a>
       
@@ -977,7 +820,7 @@ M2-13,B.N Complex Al Muteena, Dubai, UAE. </a>
                 </div>
             </div>
             <div class="col-md-6 col-lg-6 col-xl-3">
-            <img style="width: 100%;" src="./img/logokips.png" alt="">
+            <img style="width: 100%;" src="img/LOGO 3.jpg" alt="">
             </div>
         </div>
     </div>
@@ -1014,12 +857,19 @@ M2-13,B.N Complex Al Muteena, Dubai, UAE. </a>
   document.addEventListener("DOMContentLoaded", function () {
     const role = localStorage.getItem("role");
     const adminLink = document.getElementById("adminLink");
+    const bookhist = document.getElementById("bookhist");
 
     if (role === "ADMIN") {
       adminLink.style.display = "inline-block"; // or "block" if it's in a list
     } else {
       adminLink.style.display = "none";
     }
+  if (role) {
+      bookhist.style.display = "inline-block"; // or "block" if it's in a list
+    } else {
+      bookhist.style.display = "none";
+    }
+
   });
 </script>
 
@@ -1050,33 +900,9 @@ packages.slice(0, 3).forEach(pkg => {
 
 
 
-const packageContainer2 = document.getElementById('international-packages');
 
-  int_packages.slice(0,3).forEach(pkg => {
-    const packageCard = `
-      <div class="international-item col-md-4">
-        <img src="${pkg.image}" class="img-fluid w-100 rounded" style="height: 250px; object-fit: cover;" alt="${pkg.destination}">
-        <div class="international-content">
-          <div class="international-info">
-            <h5 class="text-white text-uppercase mb-2">${pkg.destination}</h5>
-            <a href="${pkg.path}" class="btn-hover text-white me-4">
-              <i class="fas fa-map-marker-alt me-1"></i> ${pkg.duration}
-            </a>
-            <a href="${pkg.path}" class="btn-hover text-white">
-            
-            </a>
-          </div>
-        </div>
-       
-        <div class="international-plus-icon">
-          <a href="${pkg.path}" class="my-auto">
-            <i class="fas fa-link fa-2x text-white"></i>
-          </a>
-        </div>
-      </div>
-    `;
-    packageContainer2.innerHTML += packageCard;
-  });
+
+ 
 
 </script>
 
@@ -1188,6 +1014,111 @@ function generateStars(count) {
     }
     return starsHtml;
 }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Dynamic Loader Script -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JS to fetch and render -->
+<script>
+  async function loadInternationalTours() {
+    const container = document.getElementById('international-tour-container');
+    container.innerHTML = ''; // Clear loading text
+
+    try {
+      const response = await fetch('https://kipstourism.com/api/public/allbooks?maincatname=International');
+      const data = await response.json();
+
+      const recommended = data.filter(item => item.recomandate == 1);
+
+      if (recommended.length === 0) {
+        container.innerHTML = '<div class="text-danger text-center">No recommended tours found.</div>';
+        return;
+      }
+
+      for (let i = 0; i < recommended.length; i += 3) {
+        const row = document.createElement('div');
+        row.className = 'row g-4 mb-4';
+
+        recommended.slice(i, i + 3).forEach(item => {
+          const slug = item.booktitle?.replace(/\s+/g, '').toLowerCase();
+          const card = document.createElement('div');
+          card.className = 'col-lg-4';
+
+         card.innerHTML = `
+  <div class="destination-img">
+    <img src="${item.imagePath}" alt="${item.booktitle}">
+    <div class="destination-overlay p-4">
+      <a href="./singlePage/singlepage.html?id=${item.id}" class="btn btn-primary text-white rounded-pill border py-2 px-3">${item.booktitle} Tour</a><br>
+      <a href="./singlePage/singlepage.html?id=${item.id}" class="btn-hover text-white mt-2 d-inline-block">View All Details <i class="fa fa-arrow-right ms-2"></i></a>
+    </div>
+  </div>
+
+          `;
+          row.appendChild(card);
+        });
+
+        container.appendChild(row);
+      }
+    } catch (error) {
+      console.error('Error loading tours:', error);
+      container.innerHTML = '<div class="text-danger text-center">Failed to load tours.</div>';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', loadInternationalTours);
+</script>
+
+<!--  domastic data -->
+
+<script>
+  async function domasticTours() {
+    const container = document.getElementById('domastic-tour-container');
+    container.innerHTML = ''; // Clear loading text
+
+    try {
+      const response = await fetch('https://kipstourism.com/api/public/allbooks?maincatname=Domestic');
+      const data = await response.json();
+
+      const recommended = data.filter(item => item.recomandate == 1);
+
+      if (recommended.length === 0) {
+        container.innerHTML = '<div class="text-danger text-center">No recommended tours found.</div>';
+        return;
+      }
+
+      for (let i = 0; i < recommended.length; i += 3) {
+        const row = document.createElement('div');
+        row.className = 'row g-4 mb-4';
+
+        recommended.slice(i, i + 3).forEach(item => {
+          const slug = item.booktitle?.replace(/\s+/g, '').toLowerCase();
+          const card = document.createElement('div');
+          card.className = 'col-lg-4';
+
+         card.innerHTML = `
+  <div class="destination-img">
+    <img src="${item.imagePath}" alt="${item.booktitle}">
+    <div class="destination-overlay p-4">
+      <a href="./singlePage/singlepage.html?id=${item.id}" class="btn btn-primary text-white rounded-pill border py-2 px-3">${item.booktitle} Tour</a><br>
+      <a href="./singlePage/singlepage.html?id=${item.id}" class="btn-hover text-white mt-2 d-inline-block">View All Details <i class="fa fa-arrow-right ms-2"></i></a>
+    </div>
+  </div>
+
+          `;
+          row.appendChild(card);
+        });
+
+        container.appendChild(row);
+      }
+    } catch (error) {
+      console.error('Error loading tours:', error);
+      container.innerHTML = '<div class="text-danger text-center">Failed to load tours.</div>';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', domasticTours);
 </script>
 
 
