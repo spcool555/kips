@@ -32,6 +32,45 @@
         <script src="data.js"></script>
 
   <style>
+    .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
     .destination-img {
       position: relative;
       overflow: hidden;
@@ -52,7 +91,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: rgba(0, 0, 0, 0.5);
+      /* background: rgba(0, 0, 0, 0.5); */
       color: white;
       padding: 1rem;
     }
@@ -622,47 +661,55 @@ Our mission is to take you beyond the typical tourist trails—blending offbeat 
 
 
         <!-- Gallery Start -->
-        <div class="gallery-section">
-            <div class="gallery-header">
-              <h5>Our Gallery</h5>
-              <h1>Tourism & Traveling Gallery.</h1>
-            </div>
-        
-            <div class="gallery-grid">
-              <img src="./img/client/20160103_152905.jpg" alt="Image 1">
-              <img src="./img/client/20160108_001921.jpg" alt="Image 2">
-              <img src="./img/client/20160526_131026.jpg" alt="Image 3">
-              <img src="./img/client/20161216_105902.jpg" alt="Image 4">
-              <img src="./img/client/20170515_102622.jpg" alt="Image 5">
-              <img src="./img/client/IMG_3478.JPG" alt="Image 6">
-              <!-- <img src="./img/client/c1.jpg" alt="Image 7"> -->
-              <!-- <img src="./img/client/c2.jpg" alt="Image 8"> -->
-              <!-- <img src="./img/client/c3.jpg" alt="Image 9"> -->
-              <img src="./img/client/c4.jpg" alt="Image 10">
-              <!-- <img src="./img/client/c5.jpg" alt="Image 11"> -->
-              <!-- <img src="./img/client/c6.jpg" alt="Image 11"> -->
-            </div>
-          </div>
-        
-          <div class="lightbox" id="lightbox">
-            <img src="" alt="Enlarged View">
-          </div>
-        
-          <script>
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = lightbox.querySelector('img');
-        
-            document.querySelectorAll('.gallery-grid img').forEach(img => {
-              img.addEventListener('click', () => {
-                lightbox.classList.add('active');
-                lightboxImg.src = img.src;
-              });
-            });
-        
-            lightbox.addEventListener('click', () => {
-              lightbox.classList.remove('active');
-            });
-          </script>
+<div class="gallery-section">
+  <div class="gallery-header">
+    <h5>Our Gallery</h5>
+    <h1>Tourism & Traveling Gallery.</h1>
+  </div>
+
+  <div class="gallery-grid" id="gallery-grid">
+    <!-- Images will be inserted dynamically -->
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <img src="" alt="Enlarged View">
+</div>
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = lightbox.querySelector('img');
+  const galleryGrid = document.getElementById('gallery-grid');
+
+  // Fetch gallery data from API
+  fetch('https://kipstourism.com/public/allCloths')
+    .then(response => response.json())
+    .then(data => {
+      data.slice(0, 8).forEach(item => {  // ⬅️ Limit to 8 images
+        const img = document.createElement('img');
+        img.src = item.imagePath;
+        img.alt = `Image ${item.id}`;
+        img.style.cursor = 'pointer';
+        galleryGrid.appendChild(img);
+
+        // Lightbox behavior
+        img.addEventListener('click', () => {
+          lightbox.classList.add('active');
+          lightboxImg.src = img.src;
+        });
+      });
+    })
+    .catch(error => {
+      console.error('Error loading gallery:', error);
+    });
+
+  // Close lightbox on click
+  lightbox.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+</script>
+
+
+
         
 <center> <a href="./gallery.html" class="btn btn-primary">Show More</a> </center>
         <!-- Gallery End -->
