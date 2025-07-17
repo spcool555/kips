@@ -681,7 +681,7 @@ Our mission is to take you beyond the typical tourist trails—blending offbeat 
   const galleryGrid = document.getElementById('gallery-grid');
 
   // Fetch gallery data from API
-  fetch('https://kipstourism.com/public/allCloths')
+  fetch('https://kipstourism.com/api/public/allCloths')
     .then(response => response.json())
     .then(data => {
       data.slice(0, 8).forEach(item => {  // ⬅️ Limit to 8 images
