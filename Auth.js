@@ -37,31 +37,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
       loader.style.display = "flex";
 
-      try {
-        const response = await fetch("https://kipstourism.com/api/auth/register", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data)
-        });
+ try {
+  const response = await fetch("https://kipstourism.com/api/auth/register", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  });
 
-        const result = await response.json();
+  const result = await response.json();
   console.log("📦 Response JSON:", result);
-        if (response.ok) {
-          localStorage.setItem("name", result.body.name);
-          localStorage.setItem("email", result.body.uname);
-          localStorage.setItem("token", result.body.token);
-          localStorage.setItem("role", result.body.role);
 
-          alert("Registration successful!");
-          
-          window.location.href = "/";
-        } else {
-          alert("Registration failed!");
-        }
-      } catch (error) {
-        console.error("Error:", error);
-        alert("Something went wrong!");
-      } finally {
+if (response.ok && result.token) {
+  localStorage.setItem("name", result.name || "");
+  localStorage.setItem("email", result.uname || "");
+  localStorage.setItem("token", result.token || "");
+  // Optional: result.role may not exist
+  localStorage.setItem("role", result.role || "");
+
+  alert("Registration successful!");
+  window.location.href = "/";
+} else {
+  console.warn("Registration failed!", result);
+  alert("Registration failed: " + (result.message || "Unknown error"));
+}
+
+} catch (error) {
+  console.error("❌ Fetch or JSON error:", error);
+  alert("Something went wrong!");
+}
+ finally {
         loader.style.display = "none";
       }
     });
