@@ -281,7 +281,7 @@ M2-13,B.N Complex Al Muteena, Dubai, UAE.</a>
         <script>
             async function loadPackages() {
                 try {
-                    const response = await fetch('https://kipstourism.com/public/allbooks?maincatname=Domastic');
+                    const response = await fetch('https://kipstourism.com/api/public/allbooks?maincatname=Domastic');
                     const packages = await response.json();
 
                     console.log("Fetched packages:", packages); // ✅ Check the array
