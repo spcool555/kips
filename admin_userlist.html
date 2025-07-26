@@ -157,8 +157,9 @@
     <a href="admin.html">Add Plan</a>
   
     <a href="#">User List</a>
-      <a href="enquiry.html">Enquiry List</a>
-        <a href="admin_galary.html">Galary List</a>
+         <a href="enquiry.html">Enquiry List</a>
+         <a href="admin_galary.html">Galary List</a>
+         <a href="admin_review.html">Review List</a>
     <!-- <a href="#">View Plans</a>
     <a href="#">Manage Categories</a> -->
   </nav>
@@ -202,7 +203,7 @@
  
 async function fetchBooks() {
   try {
-    const response = await fetch('https://kipstourism.com/api/public/getallusers');
+    const response = await fetch('https://kipstourism.com//public/getallusers');
     const users = await response.json();
 
     const tableBody = document.querySelector('#booksTable tbody');
@@ -237,7 +238,7 @@ async function fetchBooks() {
 async function deleteUser(id) {
     if (confirm("Are you sure you want to delete this book?")) {
       try {
-        const response = await fetch(`https://kipstourism.com/api/public/deleteUserByid?id=${id}`, {
+        const response = await fetch(`https://kipstourism.com//public/deleteUserByid?id=${id}`, {
           method: 'DELETE',
         });
         if (response.ok) {

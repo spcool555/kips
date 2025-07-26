@@ -681,7 +681,7 @@ Our mission is to take you beyond the typical tourist trails—blending offbeat 
   const galleryGrid = document.getElementById('gallery-grid');
 
   // Fetch gallery data from API
-  fetch('https://kipstourism.com/api/public/allCloths')
+  fetch('https://kipstourism.com//public/allCloths')
     .then(response => response.json())
     .then(data => {
       data.slice(0, 8).forEach(item => {  // ⬅️ Limit to 8 images
@@ -1010,7 +1010,7 @@ function generateStars(count) {
 </script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-    fetch('https://kipstourism.com/api/public/getAllreviews')  // Fixed URL
+    fetch('https://kipstourism.com//public/getAllreviews')  // Fixed URL
         .then(response => response.json())
         .then(data => {
             const container = document.getElementById('testimonial-container');
@@ -1074,7 +1074,7 @@ function generateStars(count) {
     container.innerHTML = ''; // Clear loading text
 
     try {
-      const response = await fetch('https://kipstourism.com/api/public/allbooks?maincatname=International');
+      const response = await fetch('https://kipstourism.com//public/allbooks?maincatname=International');
       const data = await response.json();
 
       const recommended = data.filter(item => item.recomandate == 1);
@@ -1125,7 +1125,7 @@ function generateStars(count) {
     container.innerHTML = ''; // Clear loading text
 
     try {
-      const response = await fetch('https://kipstourism.com/api/public/allbooks?maincatname=Domestic');
+      const response = await fetch('https://kipstourism.com//public/allbooks?maincatname=Domestic');
       const data = await response.json();
 
       const recommended = data.filter(item => item.recomandate == 1);
@@ -1227,7 +1227,7 @@ function generateStars(count) {
     };
 
     try {
-      const response = await fetch('https://kipstourism.com/api/public/saveReviewsData', {
+      const response = await fetch('https://kipstourism.com//public/saveReviewsData', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
