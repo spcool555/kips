@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
       loader.style.display = "flex";
 
       try {
-        const response = await fetch("https://kipstourism.com//auth/register", {
+        const response = await fetch("https://kipstourism.com/auth/register", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data)
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
       loader.style.display = "flex";
 
       try {
-        const response = await fetch("https://kipstourism.com//auth/login", {
+        const response = await fetch("https://kipstourism.com/auth/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data)

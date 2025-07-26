@@ -239,7 +239,7 @@
     <script>
       async function fetchBookingHistory() {
         try {
-          const response = await fetch('https://kipstourism.com//public/getByuseremail?useremail=' + localStorage.getItem('email'));
+          const response = await fetch('https://kipstourism.com/public/getByuseremail?useremail=' + localStorage.getItem('email'));
           if (!response.ok) throw new Error('Failed to fetch history');
 
           const data = await response.json();

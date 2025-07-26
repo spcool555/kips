@@ -206,7 +206,7 @@
  
 async function fetchBooks() {
   try {
-    const response = await fetch('https://kipstourism.com//public/getAll');
+    const response = await fetch('https://kipstourism.com/public/getAll');
     const users = await response.json();
 
     const tableBody = document.querySelector('#booksTable tbody');
@@ -250,7 +250,7 @@ async function fetchBooks() {
 async function deleteUser(id) {
     if (confirm("Are you sure you want to Approve this booking?")) {
       try {
-        const response = await fetch(`https://kipstourism.com//public/updateByStatus`, {
+        const response = await fetch(`https://kipstourism.com/public/updateByStatus`, {
           method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
